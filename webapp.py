@@ -30,8 +30,7 @@ def displayHomePage(year, homepage_filename):
         year_report += "<p>That was %s years ago.</p>\n" % (string_difference)
         wiki_link = '<p>Interested in learning more about the year %s?\n' % (year)
     	wiki_link += 'Here is a link to the wikipedia page for %s:\n' % (year)
-    	wiki_link += '<a href="http://en.wikipedia.org/wiki/%s">' + \
-    	'Wikipedia </a></p>\n' % (year)
+    	wiki_link += '<a href="http://en.wikipedia.org/wiki/%s"> Wikipedia </a></p>\n' % (year)
     wiki_link = indent(wiki_link, 1)
     year_report = indent(year_report, 1)
     page_content["results"] = year_report
