@@ -32,8 +32,8 @@ def displayHomePage(year, homepage_filename):
 def getCgiParameter():
     data = cgi.FieldStorage()
     parameter = {'year' : ''}
-    if 'year' in form:
-        parameter['year'] = form['year'].value
+    if 'year' in data:
+        parameter['year'] = data['year'].value
     return parameter
 
 #Because the input that the user gives is predefined by the developers, there is no need to 
