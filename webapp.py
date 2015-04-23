@@ -26,7 +26,7 @@ def displayHomePage(year, homepage_filename):
     year_report = indent(year_report, 1)
     page_content["results"] = year_report
     output_html = homepage.format(**page_content)
-    print 'Content-type: text/html\r\n\r\n\',
+    print "Content-type: text/html\r\n\r\n",
     print output_html
     
 def getCgiParameter():
