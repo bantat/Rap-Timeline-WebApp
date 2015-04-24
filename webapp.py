@@ -63,7 +63,7 @@ def displayHomePage(year, homepage_filename):
 		year_options += '<option value="%i">%i</option>\n' % (year_value, year_value)
 	
 	# Indents script generated page content appropriate amount
-	year_options = indent(year_options, 6)	
+	year_options = indent(year_options, 3)	
 	wiki_link = indent(wiki_link, 1)
 	year_report = indent(year_report, 1)
 	
