@@ -68,7 +68,7 @@ except:
 # Step 4: Read the rows of the output and act
 # on them.
 try:
-    cursor.execute('SELECT * FROM populations;')
+    cursor.execute('SELECT * FROM artists;')
     print '<pre>'
     for row in cursor:
         print row
