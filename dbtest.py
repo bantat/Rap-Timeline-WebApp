@@ -22,20 +22,22 @@ import sys
 import psycopg2
 
 # CHANGE THESE LINES!                                      <~~~~~~~~~~~~~~~ Hey!
-USERNAME = 'jadrian'
-DB_NAME = 'jadrian'
+USERNAME = 'bantat'
+DB_NAME = 'bantat'
 
 print 'Hello!<br>'
 
 # Step 1: Read your password from the secure file.
 print 'Reading your password...'
 try:
-    f = open(os.path.join('/cs257', USERNAME))
-    PASSWORD = f.read().strip()
-    f.close()
+    # f = open(os.path.join('/cs257', USERNAME))
+    # PASSWORD = f.read().strip()
+    # f.close()
+    
+    PASSWORD = "mike494java"    
     print 'Success!<br>'
     # UNCOMMENT THIS LINE TO SEE YOUR PASSWORD!            <~~~~~~~~~~~~~~~ Hey!
-    #print 'Your database password is %s.<br>' % PASSWORD
+    print 'Your database password is %s.<br>' % PASSWORD
 except:
     print 'Failed. =(<br>'
     sys.exit()
