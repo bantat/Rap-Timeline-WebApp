@@ -4,9 +4,9 @@ import sys
 
 class DataSource:
     def __init__(self):
-        #f = open(os.path.join('/cs257', 'bantat'))
-    	PASSWORD = "mike494java"      #f.read().strip()
-        #f.close()
+        f = open(os.path.join('/cs257', 'bantat'))
+    	PASSWORD = f.read().strip()
+        f.close()
         db_connection = psycopg2.connect(user = 'bantat',database ='bantat',password=PASSWORD)
         self.cursor = db_connection.cursor()
 
