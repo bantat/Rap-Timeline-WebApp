@@ -14,13 +14,18 @@ class DataSource:
         self.cursor.execute("SELECT * FROM artists WHERE name = %s;",(artist_name,))
         info = list(self.cursor.fetchone())
 
-        albums = []
+        album_names = []
         self.cursor.execute("SELECT name FROM albums WHERE artist = %s;",(artist_name,))
         for item in self.cursor:
             print "Adding album to artist:"
             print item[0]
-            albums.append(self.getAlbum(item[0]))
-            print "Added album object" + self.getAlbum(item[0]).getAlbumName()
+            album_names.append(item[0])
+
+        album_objects = []
+
+        for album in album_names:
+            album_object = self.getAlbum(album)
+            album_objects.append(album_object)
 
         artist_object = Artist(info[0],info[1],info[2],albums)
 
