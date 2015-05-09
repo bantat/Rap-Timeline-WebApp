@@ -116,9 +116,9 @@ class Timeline:
 
 def main():
     data = DataSource()
-    illmatic = data.getAlbum("Illmatic")
+    illmatic = data.getAlbum("B4.Da.$$")
 
-    print "Illmatic: " + illmatic.getAlbumName()
+    print "B4.Da.$$: " + illmatic.getAlbumName()
     print "Year:"
     print illmatic.getAlbumYear()
     print "Artist: " + illmatic.getAlbumArtist()
