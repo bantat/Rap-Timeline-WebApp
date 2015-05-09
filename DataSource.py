@@ -129,8 +129,8 @@ def main():
     print "Artist: " + artist.getArtistName()
     print "Summary: " + artist.getArtistDescription()
     print "Image: " + artist.getArtistImage()
-    print "Albums: "
-    for album in artist.getArtistAlbums():
-        print album.getAlbumName()
+    # print "Albums: "
+    # for album in artist.getArtistAlbums():
+    #     print album.getAlbumName()
 
 main()
