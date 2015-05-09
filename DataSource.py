@@ -6,12 +6,14 @@ class DataSource:
         relatedArtists = []
         albums = []
         artistFilePath = ""
-        artistInfo= ""
+        artistInfo = ""
         
     def getArtist(self):
         """This method takes the artist name that has been stored as string, and returns
         that string.
         """
+        # TODO Replace this with a real SQL call.
+        artist = "NOT A REAL ARTIST"
         
         return artist
     
