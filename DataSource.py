@@ -121,10 +121,10 @@ def main():
     data = DataSource()
     album = data.getAlbum("Good Kid, M.A.A.D City")
     artist = data.getArtist("The Notorious B.I.G.")
-    #
-    # print "Album: " + album.getAlbumName()
-    # print "Year:"
-    # print album.getAlbumYear()
+
+    print "Album: " + album.getAlbumName()
+    print "Year:"
+    print album.getAlbumYear()
     # print "Artist: " + album.getAlbumArtist()
     # print "Summary: " + album.getAlbumDescription()
     # print "Image: " + album.getAlbumImage()
