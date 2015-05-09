@@ -24,6 +24,8 @@ class DataSource:
         self.cursor.execute("SELECT * FROM albums WHERE name = %s;",(album_name,))
 
         album_info = list(self.cursor.fetchone())
+        print "Printing albums"
+        print album_info[4]
         album_object = Album(album_info[0],album_info[1],album_info[2],album_info[3],album_info[4])
 
         return album_object
@@ -118,17 +120,17 @@ def main():
     data = DataSource()
     album = data.getAlbum("Good Kid, M.A.A.D City")
     artist = data.getArtist("The Notorious B.I.G.")
-
-    print "Album: " + album.getAlbumName()
-    print "Year:"
-    print album.getAlbumYear()
-    print "Artist: " + album.getAlbumArtist()
-    print "Summary: " + album.getAlbumDescription()
-    print "Image: " + album.getAlbumImage()
-
-    print "Artist: " + artist.getArtistName()
-    print "Summary: " + artist.getArtistDescription()
-    print "Image: " + artist.getArtistImage()
+    #
+    # print "Album: " + album.getAlbumName()
+    # print "Year:"
+    # print album.getAlbumYear()
+    # print "Artist: " + album.getAlbumArtist()
+    # print "Summary: " + album.getAlbumDescription()
+    # print "Image: " + album.getAlbumImage()
+    #
+    # print "Artist: " + artist.getArtistName()
+    # print "Summary: " + artist.getArtistDescription()
+    # print "Image: " + artist.getArtistImage()
     print "Albums: "
     for album in artist.getArtistAlbums():
         print album.getAlbumName()
