@@ -112,7 +112,7 @@ class Timeline:
 def main():
     data = DataSource()
     album = data.getAlbum("Good Kid, M.A.A.D City")
-    artist = data.getArtist("Outkast")
+    artist = data.getArtist("Nas")
 
     print "Album: " + album.getAlbumName()
     print "Year:"
