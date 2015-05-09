@@ -16,8 +16,9 @@ class DataSource:
 
         albums = []
         self.cursor.execute("SELECT name FROM albums WHERE artist = %s;",(artist_name,))
-        for object in self.cursor:
-            albums.append(object[0])
+        for item in self.cursor:
+            print "Adding album: " + item[0]
+            albums.append(item[0])
 
         print "Albums: "
         print albums
@@ -124,11 +125,12 @@ class Timeline:
 def main():
     data = DataSource()
     album = data.getAlbum("Good Kid, M.A.A.D City")
-    artist = data.getArtist("The Notorious B.I.G.")
+    artist = data.getArtist("Nas")
 
     print "Album: " + album.getAlbumName()
     print "Year:"
     print album.getAlbumYear()
+    print "Artist: " + artist.getArtistName()
     # print "Artist: " + album.getAlbumArtist()
     # print "Summary: " + album.getAlbumDescription()
     # print "Image: " + album.getAlbumImage()
