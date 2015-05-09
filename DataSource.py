@@ -14,10 +14,13 @@ class DataSource:
         self.cursor.execute("SELECT * FROM artists WHERE name = %s;",(artist_name,))
         info = list(self.cursor.fetchone())
 
+        albums = []
         self.cursor.execute("SELECT name FROM albums WHERE artist = %s;",(artist_name,))
-        albums = list(self.cursor.fetchall())
-        print "Albums: "
-        print albums
+        for object in cursor:
+            albums.append(object[0])
+
+        print "Albums: " + albums
+        
         artist_object = Artist(info[0],info[1],info[2],albums)
 
         return artist_object
