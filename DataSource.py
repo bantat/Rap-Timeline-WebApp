@@ -78,6 +78,15 @@ class Album:
     def getAlbumName(self):
         return self.album_name
 
+    def getAlbumString(self):
+        album_string = ""
+
+        for i in range(len(self.album_name)):
+            if (self.album_name[i] == '('):
+                album_string = self.album_name[:i].strip()
+
+        return album_string
+
     def getAlbumDescription(self):
         return self.album_description
 
@@ -99,6 +108,15 @@ class Artist:
 
     def getArtistName(self):
         return self.artist_name
+
+    def getArtistString(self):
+        artist_string = ""
+
+        for i in range(len(self.artist_name)):
+            if (self.artist_name[i] == '('):
+                artist_string = self.artist_name[:i].strip()
+
+        return artist_string
 
     def getArtistDescription(self):
         return self.artist_description
@@ -122,11 +140,12 @@ class Timeline:
 
 def main():
     data = DataSource()
-    album = data.getAlbum("Good Kid, M.A.A.D City")
+    album = data.getAlbum("Teflon Don (album)")
     artist = data.getArtist("Outkast")
     year = data.getYear(1994)
 
     print "Album: " + album.getAlbumName()
+    print "Album String: " + album.getAlbumString()
     print "Year:"
     print album.getAlbumYear()
     print "Artist: " + artist.getArtistName()
