@@ -4,41 +4,49 @@ import sys
 
 class DataSource:
     def __init__(self):
-    	#f = open(os.path.join('/cs257', 'bantat'))
+        #f = open(os.path.join('/cs257', 'bantat'))
     	PASSWORD = "mike494java"      #f.read().strip()
-    	#f.close()
+        #f.close()
         db_connection = psycopg2.connect(user = 'bantat',database ='bantat',password=PASSWORD)
         self.cursor = db_connection.cursor()
 
     def getArtist(self, artist_name):
-    	self.cursor.execute("SELECT * FROM artists WHERE name = %s;",(artist_name,))
-    	info = list(self.cursor.fetchone())
-    	self.cursor.execute("SELECT name FROM albums WHERE artist = %s;",(artist_name,))
-    	albums = list(self.cursor.fetchall())
-    	artist_object = Artist(info[0],info[1],info[2],albums)
+        self.cursor.execute("SELECT * FROM artists WHERE name = %s;",(artist_name,))
+        info = list(self.cursor.fetchone())
+
+        self.cursor.execute("SELECT name FROM albums WHERE artist = %s;",(artist_name,))
+        albums = list(self.cursor.fetchall())
+        artist_object = Artist(info[0],info[1],info[2],albums)
+
         return artist_object
 
     def getAlbum(self, album_name):
-    	self.cursor.execute("SELECT * FROM albums WHERE name = %s;",(album_name,))
-    	album_info = list(self.cursor.fetchone())
-    	album_object = Album(album_info[0],album_info[1],album_info[2],album_info[3],album_info[4])
+        self.cursor.execute("SELECT * FROM albums WHERE name = %s;",(album_name,))
+
+        album_info = list(self.cursor.fetchone())
+        album_object = Album(album_info[0],album_info[1],album_info[2],album_info[3],album_info[4])
+
         return album_object
 
     def getYearsOnTimeline(self):
         self.cursor.execute("SELECT year FROM albums")
         years = []
+
         for row in self.cursor:
-        	years.append(int(row[0]))
-        years=list(set(years))
+            years.append(int(row[0]))
+        years = list(set(years))
+
         return years
 
     def getYear(self, year):
-    	self.cursor.execute("SELECT name FROM albums WHERE year= %s;",(year,))
-    	albums = []
-    	for row in self.cursor:
-    		albums.append(row[0])
-    	timeline_object = Timeline(year, albums)
-    	return timeline_object
+        self.cursor.execute("SELECT name FROM albums WHERE year= %s;",(year,))
+        albums = []
+
+        for row in self.cursor:
+            albums.append(row[0])
+        timeline_object = Timeline(year, albums)
+
+        return timeline_object
 
 class Album:
     def __init__(self, album_name, album_description, album_image, album_year,album_artist):
@@ -107,11 +115,11 @@ class Timeline:
         return albums_for_year
 
 def main():
-	data = DataSource()
-	nasInfo = data.getAlbum("Illmatic")
-	time1994 = data.getYear('1994')
+    data = DataSource()
+    illmatic = data.getAlbum("Illmatic")
 
-	print nasInfo.getAlbumYear()
-	print data.getYearsOnTimeline()
+    print "Illmatic, Year: " + illmatic.getAlbumYear() + " , Artist: " + illmatic.getAlbumArtist()
+    print "Summary: " + illmatic.getAlbumDescription()
+    print data.getYearsOnTimeline()
 
 main()
