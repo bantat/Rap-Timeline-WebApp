@@ -1,3 +1,5 @@
+__author__ = 'Tore Banta & Charlie Sarano'
+
 import psycopg2
 import os.path
 import sys

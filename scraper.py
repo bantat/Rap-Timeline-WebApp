@@ -1,4 +1,4 @@
-__author__ = 'torebanta'
+__author__ = 'Tore Banta & Charlie Sarano'
 
 import urllib2
 import psycopg2
