@@ -118,7 +118,9 @@ def main():
     data = DataSource()
     illmatic = data.getAlbum("Illmatic")
 
-    print "Illmatic, Year: " + illmatic.getAlbumYear() + " , Artist: " + illmatic.getAlbumArtist()
+    print "Illmatic, Year: "
+    print illmatic.getAlbumYear()
+    print "Artist: " + illmatic.getAlbumArtist()
     print "Summary: " + illmatic.getAlbumDescription()
     print data.getYearsOnTimeline()
 
