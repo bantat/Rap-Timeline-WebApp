@@ -17,11 +17,7 @@ class DataSource:
         albums = []
         self.cursor.execute("SELECT name FROM albums WHERE artist = %s;",(artist_name,))
         for item in self.cursor:
-            print "Adding album: " + item[0]
-            albums.append(item[0])
-
-        print "Albums: "
-        print albums
+            albums.append(self.getAlbum(item[0]))
 
         artist_object = Artist(info[0],info[1],info[2],albums)
 
@@ -50,8 +46,9 @@ class DataSource:
         self.cursor.execute("SELECT name FROM albums WHERE year= %s;",(year,))
         albums = []
 
-        for row in self.cursor:
-            albums.append(row[0])
+        for item in self.cursor:
+            albums.append(DataSource.getAlbum(item[0]))
+
         timeline_object = Timeline(year, albums)
 
         return timeline_object
@@ -96,13 +93,7 @@ class Artist:
         return self.artist_image
 
     def getArtistAlbums(self):
-        albums_by_artist = []
-
-        for album_name in self.artist_albums:
-            album_object = getAlbum(album_name)
-            albums_by_artist.append(album_object)
-
-        return albums_by_artist
+        return self.artist_albums
 
 class Timeline:
     def __init__(self, year, albums):
@@ -113,14 +104,7 @@ class Timeline:
         return self.year
 
     def getAlbumsForYear(self):
-
-        albums_for_year = []
-
-        for album_name in self.albums:
-            album_object = getAlbum(album_name)
-            albums_for_year.append(album_object)
-
-        return albums_for_year
+        return self.albums
 
 def main():
     data = DataSource()
@@ -139,7 +123,7 @@ def main():
     # print "Summary: " + artist.getArtistDescription()
     # print "Image: " + artist.getArtistImage()
     # print "Albums: "
-    # for album in artist.getArtistAlbums():
-    #     print album.getAlbumName()
+    for album in artist.getArtistAlbums():
+        print album.getAlbumName()
 
 main()
