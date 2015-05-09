@@ -49,7 +49,7 @@ class DataSource:
         return timeline_object
 
 class Album:
-    def __init__(self, album_name, album_description, album_image, album_year,album_artist):
+    def __init__(self, album_name, album_description, album_image, album_year, album_artist):
         self.album_name = album_name
         self.album_description = album_description
         self.album_year = album_year
