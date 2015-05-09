@@ -19,7 +19,8 @@ class DataSource:
         for object in self.cursor:
             albums.append(object[0])
 
-        print "Albums: " + albums
+        print "Albums: "
+        print albums
 
         artist_object = Artist(info[0],info[1],info[2],albums)
 
@@ -135,8 +136,8 @@ def main():
     # print "Artist: " + artist.getArtistName()
     # print "Summary: " + artist.getArtistDescription()
     # print "Image: " + artist.getArtistImage()
-    print "Albums: "
-    for album in artist.getArtistAlbums():
-        print album.getAlbumName()
+    # print "Albums: "
+    # for album in artist.getArtistAlbums():
+    #     print album.getAlbumName()
 
 main()
