@@ -27,9 +27,9 @@ class DataSource:
             album_object = self.getAlbum(album)
             album_objects.append(album_object)
 
-        artist_object = Artist(info[0],info[1],info[2],albums)
+        artist_objects = Artist(info[0],info[1],info[2],album_objects)
 
-        return artist_object
+        return artist_objects
 
     def getAlbum(self, album_name):
         self.cursor.execute("SELECT * FROM albums WHERE name = %s;",(album_name,))
