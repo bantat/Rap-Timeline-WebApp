@@ -91,7 +91,7 @@ class Artist:
         albums_by_artist = []
 
         for album_name in self.artist_albums:
-            album_object = DataSource.getAlbum(album_name)
+            album_object = getAlbum(album_name)
             albums_by_artist.append(album_object)
 
         return albums_by_artist
@@ -109,7 +109,7 @@ class Timeline:
         albums_for_year = []
 
         for album_name in self.albums:
-            album_object = DataSource.getAlbum(album_name)
+            album_object = getAlbum(album_name)
             albums_for_year.append(album_object)
 
         return albums_for_year
