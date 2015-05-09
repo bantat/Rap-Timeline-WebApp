@@ -16,11 +16,11 @@ class DataSource:
 
         albums = []
         self.cursor.execute("SELECT name FROM albums WHERE artist = %s;",(artist_name,))
-        for object in cursor:
+        for object in self.cursor:
             albums.append(object[0])
 
         print "Albums: " + albums
-        
+
         artist_object = Artist(info[0],info[1],info[2],albums)
 
         return artist_object
