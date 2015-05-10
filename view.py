@@ -8,13 +8,13 @@ def buildAlbumPage(content_dictionary):
     """This method takes a dictionary of content strings as an argument, and uses it to populate a template HTML file
     for the album page component of the web application. The method returns a string of HTML text for the album page"""
 
-    album_string = "<h1><a href='index.py?album=%s'>%s (%s) </a></h1>" % (content_dictionary['album'],content_dictionary['album'], content_dictionary['year'])
+    album_string = "<h1>%s (%s) </h1>" % (content_dictionary['album'], content_dictionary['year'])
     album_string = indent(album_string,1)
     album_img = "<img src=%s style ='width:250px,height:250px'>" % (content_dictionary['image'])
     album_img = indent(album_img,1)
     description = "<p>%s</p>" % (content_dictionary['summary'])
     description = indent(description, 1)
-    artist = "<p><a href='index.py?artist=%s'>%s</a></p>" % (content_dictionary['artist_name'],content_dictionary['artist_name'])
+    artist = "<p><a href='index.py?artist=%s'>%s</a></p>" % (content_dictionary['artist_id'],content_dictionary['artist_name'])
     artist = indent(artist, 1)
 
     html_dictionary = {'album': album_string, 'album_img': album_img, 'artist': artist, 'description': description}
@@ -44,7 +44,7 @@ def buildArtistPage(content_dictionary):
     albums_string = "<ul>\n"
 
     for x in range(1, len(content_dictionary)):
-        albums_string = albums_string + "<li><a href='index.py?album=%s'>%s</a></li>" % (content_dictionary[x]['album_name'],content_dictionary[x]['album_name'])
+        albums_string = albums_string + "<li><a href='index.py?album=%s'>%s</a></li>" % (content_dictionary[x]['album_id'],content_dictionary[x]['album_name'])
         albums_string += '\n'
     albums_string = indent(albums_string, 1)
     html_dictionary['albums'] = albums_string
@@ -98,10 +98,11 @@ def buildYearPage(content_dictionary):
     albums_in_year_string = "<ul>\n"
 
     for x in range(len(content_dictionary)):
+        album_id = content_dictionary[x]['album_id']
         album_name = content_dictionary[x]['album']
         artist_name = content_dictionary[x]['artist']
         album_string = "<li><a href='index.py?album=%s'>%s</a> - <a href='index.py?artist=%s'>%s</a></li>"
-        album_string = album_string % (album_name, album_name, artist_name, artist_name)
+        album_string = album_string % (album_id, album_name, artist_name, artist_name)
         album_string = indent(album_string, 1)
         if x != (len(content_dictionary) - 1):
             album_string += '\n'
