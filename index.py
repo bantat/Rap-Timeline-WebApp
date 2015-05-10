@@ -7,6 +7,7 @@ import model
 import DataSource
 import cgi
 import cgitb
+import urlparse
 
 cgitb.enable()
 
@@ -24,13 +25,17 @@ def getCgiParameters():
     data = cgi.FieldStorage()
     parameters = {'year' : '', 'artist' : '','album' : ''}
     if 'year' in data:
-        parameters['year'] = sanitizeUserInput(data['year'].value)
+        year = data['year'].value
+        year = urlparse.parse_qs(year)
+        parameters['year'] = sanitizeUserInput(year)
 
     if 'artist' in data:
-        parameters['artist'] = sanitizeUserInput(data['artist'].value)
+        artist = data['artist'].value
+        parameters['artist'] = sanitizeUserInput(artist)
 
     if 'album' in data:
-        parameters['album'] = sanitizeUserInput(data['album'].value)
+        album = data['album'].value
+        parameters['album'] = sanitizeUserInput(album)
 
     return parameters
 

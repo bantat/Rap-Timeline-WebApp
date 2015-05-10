@@ -4,6 +4,7 @@ import psycopg2
 import os.path
 import sys
 
+
 class DataSource:
 
     # TODO(Tore) Add try catch blocks
@@ -92,6 +93,7 @@ class DataSource:
 
         return timeline_object
 
+
 class Album:
 
     def __init__(self, album_name, album_description, album_image, album_year, album_artist):
@@ -125,6 +127,7 @@ class Album:
     def getAlbumArtist(self):
         return self.album_artist
 
+
 class Artist:
 
     def __init__(self, artist_name, artist_description, artist_image, artist_albums):
@@ -154,6 +157,7 @@ class Artist:
     def getArtistAlbums(self):
         return self.artist_albums
 
+
 class Timeline:
 
     def __init__(self, year, albums):
@@ -166,9 +170,10 @@ class Timeline:
     def getAlbumsForYear(self):
         return self.albums
 
+
 def main():
     data = DataSource()
-    album = data.getAlbum("Teflon Don (album)")
+    album = data.getAlbum("Yeezus")
     artist = data.getArtist("Outkast")
     year = data.getYear(1994)
 
@@ -185,9 +190,11 @@ def main():
     # print "Summary: " + artist.getArtistDescription()
     # print "Image: " + artist.getArtistImage()
     # print "Albums: "
+    print "Getting albums for Outkast"
     for album in artist.getArtistAlbums():
         print album.getAlbumName()
 
+    print "Getting albums for 1994"
     for album in year.getAlbumsForYear():
         print album.getAlbumName()
 
