@@ -111,23 +111,13 @@ if __name__ == "__main__":
     year_content = getYearContent(1994)
     for dictionary in year_content:
         for key, value in dictionary.iteritems():
-            print "Key: "
-            print key
-            print "Value: "
-            print value
+            print "['%s','%s']" % (str(key),str(value))
 
     artist_content = getArtistContent("Schoolboy Q")
     for dictionary in artist_content:
         for key, value in dictionary.iteritems():
-            print "Key: "
-            print key
-            print "Value: "
-            print value
+            print "['%s','%s']" % (str(key),str(value))
 
     album_content = getAlbumContent("Long. Live. ASAP")
-    for dictionary in album_content:
-        for key, value in dictionary.iteritems():
-            print "Key: "
-            print key
-            print "Value: "
-            print value
+    for key, value in album_content.iteritems():
+        print "['%s','%s']" % (str(key),str(value))
