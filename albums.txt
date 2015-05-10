@@ -2,8 +2,8 @@ Illmatic;1994;Nas
 It Was Written;1996;Nas
 Life Is Good (Nas album);2012;Nas
 God's Son;2002;Nas
-Ready to Die;1994;Notorious B.I.G.
-Life After Death;1997;Notorious B.I.G.
+Ready to Die;1994;The Notorious B.I.G.
+Life After Death;1997;The Notorious B.I.G.
 Reasonable Doubt (album);1996;Jay Z
 The Blueprint;2001;Jay Z
 American Gangster (album);2007;Jay Z
