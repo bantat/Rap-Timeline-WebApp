@@ -24,13 +24,13 @@ def getCgiParameters():
     data = cgi.FieldStorage()
     parameters = {'year' : '', 'artist' : '','album' : ''}
     if 'year' in data:
-        parameters['year'] = sanitizeUserInput(data['year'])
+        parameters['year'] = sanitizeUserInput(data['year'].value)
 
     if 'artist' in data:
-        parameters['artist'] = sanitizeUserInput(data['artist'])
+        parameters['artist'] = sanitizeUserInput(data['artist'].value)
 
     if 'album' in data:
-        parameters['album'] = sanitizeUserInput(data['album'])
+        parameters['album'] = sanitizeUserInput(data['album'].value)
 
     return parameters
 
