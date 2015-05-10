@@ -108,9 +108,9 @@ def buildYearPage(content_dictionary):
         album_id = content_dictionary[x]['album_id']
         album_name = content_dictionary[x]['album_name']
         artist_name = content_dictionary[x]['artist']
-        artist_path = {'artist':'%s'} % (content_dictionary['artist_id'])
+        artist_path = {'artist':'%s'} % (content_dictionary[x]['artist_id'])
         urlpath_artist = urllib.urlencode(artist_path)
-        album_path = {'album':'%s'} % (content_dictionary['album_id'])
+        album_path = {'album':'%s'} % (content_dictionary[x]['album_id'])
         urlpath_album = urllib.urlencode(album_path)
         album_string = "<li><a href='index.py?%s'>%s</a> - <a href='index.py?%s'>%s</a></li>"
         album_string = album_string % (urlpath_album, album_name, urlpath_artist, artist_name)
