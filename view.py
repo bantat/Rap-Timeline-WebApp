@@ -3,6 +3,7 @@
 
 __author__ = 'Tore Banta & Charlie Sarano'
 import model
+import urllib
 
 def buildAlbumPage(content_dictionary):
     """This method takes a dictionary of content strings as an argument, and uses it to populate a template HTML file
@@ -14,7 +15,9 @@ def buildAlbumPage(content_dictionary):
     album_img = indent(album_img,1)
     description = "<p>%s</p>" % (content_dictionary['summary'])
     description = indent(description, 1)
-    artist = "<p><a href='index.py?artist=%s'>%s</a></p>" % (content_dictionary['artist_id'],content_dictionary['artist_name'])
+    path = {'artist':'%s'} % (content_dictionary['artist_id'])
+    urlpath = urllib.urlencode(path)
+    artist = "<p><a href='index.py?%s'>%s</a></p>" % (urlpath, content_dictionary['artist_name'])
     artist = indent(artist, 1)
 
     html_dictionary = {'album': album_string, 'album_img': album_img, 'artist': artist, 'description': description}
@@ -35,7 +38,9 @@ def buildArtistPage(content_dictionary):
     f.close()
 
     html_dictionary = {'artist': '', 'image': '', 'description': '', 'albums': ''}
-    artist_string = "<h2><a href='index.py?artist=%s'>%s </a></h2>" % (content_dictionary[0]['artist_name'],content_dictionary[0]['artist_name'])
+    path = {'artist':'%s'} % (content_dictionary['artist_id'])
+    urlpath = urllib.urlencode(path)
+    artist_string = "<h2><a href='index.py?%s'>%s </a></h2>" % (urlpath,content_dictionary[0]['artist_name'])
     artist_string = indent(artist_string, 1)
     image_path = "<img src= %s style = 'width:250px;height:250px'>" % (content_dictionary[0]['image'])
     image_path = indent(image_path,1)
@@ -44,7 +49,9 @@ def buildArtistPage(content_dictionary):
     albums_string = "<ul>\n"
 
     for x in range(1, len(content_dictionary)):
-        albums_string = albums_string + "<li><a href='index.py?album=%s'>%s</a></li>" % (content_dictionary[x]['album_id'],content_dictionary[x]['album_name'])
+        path = {'album':'%s'} % (content_dictionary[x]['album_id'])
+        urlpath = urllib.urlencode(path)
+        albums_string = albums_string + "<li><a href='index.py?%s'>%s</a></li>" % (urlpath, content_dictionary[x]['album_name'])
         albums_string += '\n'
     albums_string = indent(albums_string, 1)
     html_dictionary['albums'] = albums_string
@@ -101,8 +108,12 @@ def buildYearPage(content_dictionary):
         album_id = content_dictionary[x]['album_id']
         album_name = content_dictionary[x]['album_name']
         artist_name = content_dictionary[x]['artist']
-        album_string = "<li><a href='index.py?album=%s'>%s</a> - <a href='index.py?artist=%s'>%s</a></li>"
-        album_string = album_string % (album_id, album_name, artist_name, artist_name)
+        artist_path = {'artist':'%s'} % (content_dictionary['artist_id'])
+        urlpath_artist = urllib.urlencode(artist_path)
+        album_path = {'album':'%s'} % (content_dictionary['album_id'])
+        urlpath_album = urllib.urlencode(album_path)
+        album_string = "<li><a href='index.py?%s'>%s</a> - <a href='index.py?%s'>%s</a></li>"
+        album_string = album_string % (urlpath_album, album_name, urlpath_artist, artist_name)
         album_string = indent(album_string, 1)
         if x != (len(content_dictionary) - 1):
             album_string += '\n'
