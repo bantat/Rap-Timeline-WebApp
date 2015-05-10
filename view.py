@@ -107,7 +107,7 @@ def buildYearPage(content_dictionary):
     for x in range(len(content_dictionary)):
         album_id = content_dictionary[x]['album_id']
         album_name = content_dictionary[x]['album_name']
-        artist_name = content_dictionary[x]['artist']
+        artist_name = content_dictionary[x]['artist_name']
         artist_path = {'artist':'%s'} % (content_dictionary[x]['artist_id'])
         urlpath_artist = urllib.urlencode(artist_path)
         album_path = {'album':'%s'} % (content_dictionary[x]['album_id'])
