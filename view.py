@@ -35,7 +35,7 @@ def buildArtistPage(content_dictionary):
     f.close()
 
     html_dictionary = {'artist': '', 'image': '', 'description': '', 'albums': ''}
-    artist_string = "<h2><a href='index.py?artist=%s'>%s </a></h2>" % (content_dictionary[0]['name'],content_dictionary[0]['name'])
+    artist_string = "<h2><a href='index.py?artist=%s'>%s </a></h2>" % (content_dictionary[0]['artist_name'],content_dictionary[0]['artist_name'])
     artist_string = indent(artist_string, 1)
     image_path = "<img src= %s style = 'width:250px;height:250px'>" % (content_dictionary[0]['image'])
     image_path = indent(image_path,1)
