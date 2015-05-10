@@ -15,14 +15,22 @@ class DataSource:
             f = open(os.path.join('/cs257', USERNAME))
             PASSWORD = f.read().strip()
             f.close()
+        except:
+            print "Password read failed"
+
+        try:
             db_connection = psycopg2.connect(user=USERNAME, database=DB_NAME, password=PASSWORD)
         except:
             print "Connection failed"
 
+        try:
+            self.cursor = db_connection.cursor()
+        except:
+            print "Cursor failed"
+
         # PASSWORD = "mike494java" # f.read().strip()
         # f.close()
         # db_connection = psycopg2.connect(user = 'bantat',database ='bantat',password=PASSWORD)
-        self.cursor = db_connection.cursor()
 
     # TODO(Tore) Check cursor returns something
     def getArtist(self, artist_name):
