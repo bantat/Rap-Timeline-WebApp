@@ -108,7 +108,7 @@ def getYearContent(year):
 
     return content_list
 
-if __name__ == "__main__":
+def main():
     year_content = getYearContent(2012)
     for dictionary in year_content:
         for key, value in dictionary.iteritems():
@@ -122,3 +122,6 @@ if __name__ == "__main__":
     album_content = getAlbumContent("My Name Is My Name")
     for key, value in album_content.iteritems():
         print "['%s','%s']" % (str(key),str(value))
+
+if __name__ == "__main__":
+    main()
