@@ -14,7 +14,7 @@ cgitb.enable()
 def main():
     data_source = DataSource.DataSource()
     parameters = getCgiParameters()
-    page_content = model.buildPageBasedOnParameters(data_source,parameters)
+    page_content = model.buildPageBasedOnParameters(parameters)
     print page_content
 
 
@@ -23,13 +23,13 @@ def getCgiParameters():
     data = cgi.FieldStorage()
     parameters = {'year' : '', 'artist' : '','album' : ''}
     if 'year' in data:
-        parameters['year'] = sanitizeUserInput(data['year'].value)
+        parameters['year'] = sanitizeUserInput(data['year'])
 
     if 'artist' in data:
-        parameters['artist'] = sanitizeUserInput(data['artist'].value)
+        parameters['artist'] = sanitizeUserInput(data['artist'])
 
     if 'album' in data:
-        parameters['album'] = sanitizeUserInput(data['album'].value)
+        parameters['album'] = sanitizeUserInput(data['album'])
 
     return parameters
 
