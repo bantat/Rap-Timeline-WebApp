@@ -100,9 +100,9 @@ def buildYearPage(content_dictionary):
         album_name = content_dictionary[x]['album']
         artist_name = content_dictionary[x]['artist']
         album_string = "<li>%s - %s</li>"
-        album_string += '\n'
         album_string = album_string % (album_name, artist_name)
         album_string = indent(album_string, 1)
+        album_string += '\n'
         albums_in_year_string += album_string
 
     albums_in_year_string += '\n'
