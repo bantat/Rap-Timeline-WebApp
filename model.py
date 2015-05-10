@@ -96,7 +96,7 @@ def getYearContent(year):
     year_object = data.getYear(year)
     albums = year_object.getAlbumsForYear()
     for album in albums:
-        content_dictionary = {'album_id':'','album_name':'','artist':'','year':''}
+        content_dictionary = {'album_id':'','album_name':'','artist_name':'','artist_id':'','year':''}
         # print "Adding album: " + album.getAlbumString()
         content_dictionary['album_name'] = album.getAlbumString()
         content_dictionary['album_id'] = album.getAlbumName()
@@ -105,7 +105,8 @@ def getYearContent(year):
         # print "CREATING ARTIST OBJECT FROM " + artist_name
         artist_object = data.getArtist(artist_name)
         # print "Artist string: " + artist_object.getArtistString()
-        content_dictionary['artist'] = artist_object.getArtistString()
+        content_dictionary['artist_name'] = artist_object.getArtistString()
+        content_dictionary['artist_id'] = artist_object.getArtistName()
         content_dictionary['year'] = year
         content_list.append(content_dictionary)
 
