@@ -162,5 +162,3 @@ def main():
 
     for album in year.getAlbumsForYear():
         print album.getAlbumName()
-
-main()

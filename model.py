@@ -49,7 +49,8 @@ def getAlbumContent(album_name):
     content_dictionary['album'] = album_object.getAlbumString()
     content_dictionary['summary'] = album_object.getAlbumDescription()
     content_dictionary['image'] = album_object.getAlbumImage()
-    artist_object = data.getArtist(album_object.getAlbumArtist())
+    artist_name = album_object.getAlbumArtist()
+    artist_object = data.getArtist(artist_name)
     content_dictionary['artist_id'] = artist_object.getArtistName()
     content_dictionary['artist_name'] = artist_object.getArtistString()
 
@@ -95,7 +96,8 @@ def getYearContent(year):
     for album in albums:
         content_dictionary = {'album':'','artist':'','year':''}
         content_dictionary['album'] = album.getAlbumString()
-        artist_object = data.getArtist(album.getAlbumArtist())
+        artist_name = album.getAlbumArtist()
+        artist_object = data.getArtist(artist_name)
         content_dictionary['artist'] = artist_object.getArtistString()
         content_dictionary['year'] = year
         content_list.append(content_dictionary)
