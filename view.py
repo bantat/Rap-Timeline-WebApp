@@ -11,7 +11,7 @@ def buildAlbumPage(content_dictionary):
 
     album_string = "<h1>%s (%s) </h1>" % (content_dictionary['album'], content_dictionary['year'])
     album_string = indent(album_string,1)
-    album_img = "<img src=%s style ='width:250px,height:250px'>" % (content_dictionary['image'])
+    album_img = "<img src=%s align ='middle'>" % (content_dictionary['image'])
     album_img = indent(album_img,1)
     description = "<p>%s</p>" % (content_dictionary['summary'])
     description = indent(description, 1)
@@ -42,7 +42,7 @@ def buildArtistPage(content_dictionary):
     urlpath = urllib.urlencode(path)
     artist_string = "<h2><a href='index.py?%s'>%s </a></h2>" % (urlpath,content_dictionary[0]['artist_name'])
     artist_string = indent(artist_string, 1)
-    image_path = "<img src= %s style = 'width:250px;height:250px'>" % (content_dictionary[0]['image'])
+    image_path = "<img src= %s align='middle'>" % (content_dictionary[0]['image'])
     image_path = indent(image_path,1)
     description = "<p>%s</p>" % (content_dictionary[0]['summary'])
     description = indent(description, 1)
