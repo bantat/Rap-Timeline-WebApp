@@ -44,7 +44,7 @@ def buildArtistPage(content_dictionary):
     albums_string = ""
 
     for x in range(1, len(content_dictionary)):
-        albums_string = albums_string + "<p id=album>%s </p>" % (content_dictionary[x]['album_name'])
+        albums_string = albums_string + "<p>%s</p>" % (content_dictionary[x]['album_name'])
     albums_string = indent(albums_string, 1)
     html_dictionary['albums'] = albums_string
     html_dictionary['artist'] = artist_string
