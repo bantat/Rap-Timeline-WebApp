@@ -5,13 +5,26 @@ import os.path
 import sys
 
 class DataSource:
+
+    # TODO(Tore) Add try catch blocks
     def __init__(self):
-        # f = open(os.path.join('/cs257', 'bantat'))
-    	PASSWORD = "mike494java" # f.read().strip()
+        USERNAME = 'bantat'
+        DB_NAME = 'bantat'
+
+        try:
+            f = open(os.path.join('/cs257', USERNAME))
+            PASSWORD = f.read().strip()
+            f.close()
+            db_connection = psycopg2.connect(user=USERNAME, database=DB_NAME, password=PASSWORD)
+        except:
+            print "Connection failed"
+
+        # PASSWORD = "mike494java" # f.read().strip()
         # f.close()
-        db_connection = psycopg2.connect(user = 'bantat',database ='bantat',password=PASSWORD)
+        # db_connection = psycopg2.connect(user = 'bantat',database ='bantat',password=PASSWORD)
         self.cursor = db_connection.cursor()
 
+    # TODO(Tore) Check cursor returns something
     def getArtist(self, artist_name):
         self.cursor.execute("SELECT * FROM artists WHERE name = %s;",(artist_name,))
         info = list(self.cursor.fetchone())
@@ -68,6 +81,7 @@ class DataSource:
         return timeline_object
 
 class Album:
+
     def __init__(self, album_name, album_description, album_image, album_year, album_artist):
         self.album_name = album_name
         self.album_description = album_description
@@ -79,7 +93,7 @@ class Album:
         return self.album_name
 
     def getAlbumString(self):
-        album_string = ""
+        album_string = self.album_name
 
         for i in range(len(self.album_name)):
             if (self.album_name[i] == '('):
@@ -100,6 +114,7 @@ class Album:
         return self.album_artist
 
 class Artist:
+
     def __init__(self, artist_name, artist_description, artist_image, artist_albums):
         self.artist_name = artist_name
         self.artist_description = artist_description
@@ -110,7 +125,7 @@ class Artist:
         return self.artist_name
 
     def getArtistString(self):
-        artist_string = ""
+        artist_string = self.artist_name
 
         for i in range(len(self.artist_name)):
             if (self.artist_name[i] == '('):
@@ -128,6 +143,7 @@ class Artist:
         return self.artist_albums
 
 class Timeline:
+
     def __init__(self, year, albums):
         self.year = year
         self.albums = albums
@@ -163,4 +179,5 @@ def main():
     for album in year.getAlbumsForYear():
         print album.getAlbumName()
 
-main()
+if __name__ == '__main__':
+    main()
