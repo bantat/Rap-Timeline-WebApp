@@ -118,6 +118,7 @@ def main():
     year_dict=[{'album'= 'Life is Good','artist'='Nas','year'='2012'}
     print buildYearPage(year_dict)
 
+main()
 
 
 
