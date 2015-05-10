@@ -76,6 +76,7 @@ class DataSource:
         for row in self.cursor:
             years.append(int(row[0]))
         years = list(set(years))
+        years = reversed(years)
 
         return years
 
@@ -204,5 +205,5 @@ def main():
     # for album in year.getAlbumsForYear():
     #     print album.getAlbumName()
 
-if __name__ == '__main__':
-    main()
+#if __name__ == '__main__':
+ #   main()
