@@ -38,7 +38,7 @@ def buildArtistPage(content_dictionary):
     f.close()
 
     html_dictionary = {'artist': '', 'image': '', 'description': '', 'albums': ''}
-    path = {'artist':content_dictionary['artist_id']} 
+    path = {'artist':content_dictionary[0]['artist_id']} 
     urlpath = urllib.urlencode(path)
     artist_string = "<h2><a href='index.py?%s'>%s </a></h2>" % (urlpath,content_dictionary[0]['artist_name'])
     artist_string = indent(artist_string, 1)
