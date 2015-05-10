@@ -15,17 +15,17 @@ def buildPageBasedOnParameters(parameters):
 
     page_content = ""
 
-    if 'year' in parameters:
+    if parameters['year'] != '':
         year = parameters['year']
         page_content += view.buildHeaderPage()
         page_content += view.buildYearPage(year)
         page_content += view.buildFooterPage()
-    elif 'artist' in parameters:
+    elif parameters['artist'] != '':
         artist = parameters['artist']
         page_content += view.buildHeaderPage()
         page_content += view.buildArtistPage(getArtistContent(artist))
         page_content += view.buildFooterPage()
-    elif 'album' in parameters:
+    elif parameters['album'] != '':
         album = parameters['album']
         page_content += view.buildHeaderPage()
         page_content += view.buildAlbumPage(getAlbumContent(album))
@@ -96,13 +96,13 @@ def getYearContent(year):
     albums = year_object.getAlbumsForYear()
     for album in albums:
         content_dictionary = {'album':'','artist':'','year':''}
-        print "Adding album: " + album.getAlbumString()
+        # print "Adding album: " + album.getAlbumString()
         content_dictionary['album'] = album.getAlbumString()
-        print "Artist name: " + album.getAlbumArtist()
+        # print "Artist name: " + album.getAlbumArtist()
         artist_name = album.getAlbumArtist()
-        print "CREATING ARTIST OBJECT FROM " + artist_name
+        # print "CREATING ARTIST OBJECT FROM " + artist_name
         artist_object = data.getArtist(artist_name)
-        print "Artist string: " + artist_object.getArtistString()
+        # print "Artist string: " + artist_object.getArtistString()
         content_dictionary['artist'] = artist_object.getArtistString()
         content_dictionary['year'] = year
         content_list.append(content_dictionary)
