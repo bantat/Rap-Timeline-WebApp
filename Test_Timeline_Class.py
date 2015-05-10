@@ -8,8 +8,9 @@ __author__ = 'Tore Banta & Charlie Sarano'
 class TestTimeline(TestCase):
 
     def test_getYear(self):
-        year_object = DataSource.DataSource.getYear(1994)
-        TestCase.assertEqual(self,year_object.getYear(),1994,"Year value does not equal getYear return value")
+        data = DataSource.DataSource()
+        year_object = data.getYear(1994)
+        TestCase.assertEqual(self, year_object.getYear(), 1994, "Year value does not equal getYear return value")
 
 
     def test_getAlbumsForYear(self):
