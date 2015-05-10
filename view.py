@@ -8,7 +8,7 @@ def buildAlbumPage(content_dictionary):
     """This method takes a dictionary of content strings as an argument, and uses it to populate a template HTML file
     for the album page component of the web application. The method returns a string of HTML text for the album page"""
 
-    album_string = "<h1 id= album> %s (%s) </h1>" % (content_dictionary['album'], content_dictionary['year'])
+    album_string = "<h1> %s (%s) </h1>" % (content_dictionary['album'], content_dictionary['year'])
     album_string = indent(album_string,1)
     album_img = "<img src=%s style ='width:250px,height:250px'>" % (content_dictionary['image'])
     album_img = indent(album_img,1)
@@ -124,9 +124,17 @@ def indent(s, k):
     return "\n".join([" "*(4*k) + line for line in s.splitlines()])
 
 if __name__ == '__main__':
-    year_dict1 = {'album': 'Life is Good','artist': 'Nas','year': '2012'}
-    year_dict2 = {'album': 'Control System', 'artist': 'Ab-Soul','year':'2012'}
+    # year_dict1 = {'album': 'Life is Good','artist': 'Nas','year': '2012'}
+    # year_dict2 = {'album': 'Control System', 'artist': 'Ab-Soul','year':'2012'}
+    # dict_list = []
+    # dict_list.append(year_dict1)
+    # dict_list.append(year_dict2)
+    # print buildYearPage(dict_list)
+    artist_dict1 = {'name':'Eminem','summary':'Eminem Summary','image':'eminem_is_cool.jpg'}
+    artist_dict2 = {'album_id':'The Marshall Mathers LP','year':2000,'album_name':'The Marshall Mathers LP'}
+    artist_dict3 = {'album_id':'The Slim Shady LP','year':1999,'album_name':'The Slim Shady LP'}
     dict_list = []
-    dict_list.append(year_dict1)
-    dict_list.append(year_dict2)
-    print buildYearPage(dict_list)
+    dict_list.append(artist_dict1)
+    dict_list.append(artist_dict2)
+    dict_list.append(artist_dict3)
+    print buildArtistPage(dict_list)
