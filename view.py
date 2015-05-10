@@ -15,7 +15,7 @@ def buildAlbumPage(content_dictionary):
     album_img = indent(album_img,1)
     description = "<p>%s</p>" % (content_dictionary['summary'])
     description = indent(description, 1)
-    path = {'artist':'%s'} % (content_dictionary['artist_id'])
+    path = {'artist':content_dictionary['artist_id']} 
     urlpath = urllib.urlencode(path)
     artist = "<p><a href='index.py?%s'>%s</a></p>" % (urlpath, content_dictionary['artist_name'])
     artist = indent(artist, 1)
@@ -38,7 +38,7 @@ def buildArtistPage(content_dictionary):
     f.close()
 
     html_dictionary = {'artist': '', 'image': '', 'description': '', 'albums': ''}
-    path = {'artist':'%s'} % (content_dictionary['artist_id'])
+    path = {'artist':content_dictionary['artist_id']} 
     urlpath = urllib.urlencode(path)
     artist_string = "<h2><a href='index.py?%s'>%s </a></h2>" % (urlpath,content_dictionary[0]['artist_name'])
     artist_string = indent(artist_string, 1)
@@ -49,7 +49,7 @@ def buildArtistPage(content_dictionary):
     albums_string = "<ul>\n"
 
     for x in range(1, len(content_dictionary)):
-        path = {'album':'%s'} % (content_dictionary[x]['album_id'])
+        path = {'album':content_dictionary[x]['album_id']} 
         urlpath = urllib.urlencode(path)
         albums_string = albums_string + "<li><a href='index.py?%s'>%s</a></li>" % (urlpath, content_dictionary[x]['album_name'])
         albums_string += '\n'
@@ -108,9 +108,9 @@ def buildYearPage(content_dictionary):
         album_id = content_dictionary[x]['album_id']
         album_name = content_dictionary[x]['album_name']
         artist_name = content_dictionary[x]['artist_name']
-        artist_path = {'artist':'%s'} % (content_dictionary[x]['artist_id'])
+        artist_path = {'artist': content_dictionary[x]['artist_id']} 
         urlpath_artist = urllib.urlencode(artist_path)
-        album_path = {'album':'%s'} % (content_dictionary[x]['album_id'])
+        album_path = {'album':content_dictionary[x]['album_id']} 
         urlpath_album = urllib.urlencode(album_path)
         album_string = "<li><a href='index.py?%s'>%s</a> - <a href='index.py?%s'>%s</a></li>"
         album_string = album_string % (urlpath_album, album_name, urlpath_artist, artist_name)
