@@ -99,7 +99,7 @@ def buildYearPage(content_dictionary):
 
     for x in range(len(content_dictionary)):
         album_id = content_dictionary[x]['album_id']
-        album_name = content_dictionary[x]['album']
+        album_name = content_dictionary[x]['album_name']
         artist_name = content_dictionary[x]['artist']
         album_string = "<li><a href='index.py?album=%s'>%s</a> - <a href='index.py?artist=%s'>%s</a></li>"
         album_string = album_string % (album_id, album_name, artist_name, artist_name)
