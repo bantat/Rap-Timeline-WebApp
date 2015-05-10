@@ -180,11 +180,14 @@ def main():
     artist = data.getArtist("Outkast")
     year = data.getYear(1994)
 
-    print "Album: " + album.getAlbumName()
-    print "Album String: " + album.getAlbumString()
-    print "Year:"
-    print album.getAlbumYear()
-    print "Artist: " + artist.getArtistName()
+    for year in data.getYearsOnTimeline:
+        print year
+
+    # print "Album: " + album.getAlbumName()
+    # print "Album String: " + album.getAlbumString()
+    # print "Year:"
+    # print album.getAlbumYear()
+    # print "Artist: " + artist.getArtistName()
     # print "Artist: " + album.getAlbumArtist()
     # print "Summary: " + album.getAlbumDescription()
     # print "Image: " + album.getAlbumImage()
@@ -193,13 +196,13 @@ def main():
     # print "Summary: " + artist.getArtistDescription()
     # print "Image: " + artist.getArtistImage()
     # print "Albums: "
-    print "Getting albums for Outkast"
-    for album in artist.getArtistAlbums():
-        print album.getAlbumName()
+    # print "Getting albums for Outkast"
+    # for album in artist.getArtistAlbums():
+    #     print album.getAlbumName()
 
-    print "Getting albums for 1994"
-    for album in year.getAlbumsForYear():
-        print album.getAlbumName()
+    # print "Getting albums for 1994"
+    # for album in year.getAlbumsForYear():
+    #     print album.getAlbumName()
 
 # if __name__ == '__main__':
 #     main()

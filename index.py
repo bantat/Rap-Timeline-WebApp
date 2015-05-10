@@ -42,7 +42,7 @@ def getCgiParameters():
 
 def sanitizeUserInput(input):
     """Removes characters from user input string which might be used to perform SQL injection."""
-    illegal_chars = ";\\/:\"<>@"
+    illegal_chars = ";\\:\"<>@"
     for ch in illegal_chars:
         input = input.replace(ch, '')
     return input
