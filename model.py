@@ -67,8 +67,9 @@ def getArtistContent(artist_name):
     content_list = []
 
     artist_object = data.getArtist(artist_name)
-    artist_dictionary = {'name':'','summary':'','image':''}
-    artist_dictionary['name'] = artist_object.getArtistString()
+    artist_dictionary = {'artist_name':'','artist_id':'','summary':'','image':''}
+    artist_dictionary['artist_name'] = artist_object.getArtistString()
+    artist_dictionary['artist_id'] = artist_object.getArtistName()
     artist_dictionary['summary'] = artist_object.getArtistDescription()
     artist_dictionary['image'] = artist_object.getArtistImage()
     content_list.append(artist_dictionary)
