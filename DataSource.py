@@ -79,7 +79,7 @@ class Album:
         return self.album_name
 
     def getAlbumString(self):
-        album_string = ""
+        album_string = self.album_name
 
         for i in range(len(self.album_name)):
             if (self.album_name[i] == '('):
@@ -110,7 +110,7 @@ class Artist:
         return self.artist_name
 
     def getArtistString(self):
-        artist_string = ""
+        artist_string = self.artist_name
 
         for i in range(len(self.artist_name)):
             if (self.artist_name[i] == '('):
