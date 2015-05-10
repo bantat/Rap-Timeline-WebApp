@@ -2,7 +2,7 @@
 #-*- coding: utf-8 -*-
 
 __author__ = 'Tore Banta & Charlie Sarano'
-
+import model
 
 def buildAlbumPage(content_dictionary):
     """This method takes a dictionary of content strings as an argument, and uses it to populate a template HTML file
@@ -14,27 +14,35 @@ def buildAlbumPage(content_dictionary):
 def buildArtistPage(content_dictionary):
     """This method takes a dictionary of content strings as an argument, and uses it to populate a template HTML file
     for the artist page component of the web application. The method returns a string of HTML text for the artist page"""
-
     return ""
+
 
 
 def buildHeaderPage():
     """This method returns a string of HTML text for the header component of a web page for the application."""
-
-    return ""
+    
+    f= open(header.html)
+    headerString = f.read()
+    return headerString
 
 
 def buildFooterPage():
     """This method returns a string of HTML text for the footer component of a web page for the application."""
-
-    return ""
+    
+    f= open(footer.html)
+    footerString = f.read()
+    return footerString
 
 
 def buildTimelinePage(years_on_timeline):
     """This method builds HTML text for a complete timeline of albums. The method takes a list of years
     as an argument."""
-
-    return ""
+    
+    timelineString= ""
+    for year in years_on_timeline:
+        contentDictionary= model.getYearContent(year)
+        timelineString = timelineString + buildYearPage(contentDictionary)
+    return timelineString
 
 
 def buildYearPage(content_dictionary):
