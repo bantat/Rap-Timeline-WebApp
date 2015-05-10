@@ -8,23 +8,22 @@ def buildAlbumPage(content_dictionary):
     """This method takes a dictionary of content strings as an argument, and uses it to populate a template HTML file
     for the album page component of the web application. The method returns a string of HTML text for the album page"""
 
-    html_dict = {'album'='','album_img'='','artist'='','description'=''}
-    albumString = "<h1 id= album> %s (%s) </h1>" % (contentDictionary['album'],contentDictionary['year'])
-    albumString = indent(albumString,1)
-    album_img = "<img src=%s style ='width:250px,height:250px'>" % (contentDictionary['image'])
+    album_string = "<h1 id= album> %s (%s) </h1>" % (content_dictionary['album'], content_dictionary['year'])
+    album_string = indent(album_string,1)
+    album_img = "<img src=%s style ='width:250px,height:250px'>" % (content_dictionary['image'])
     album_img = indent(album_img,1)
-    description = "<p>%s</p>" % (contentDictionary['summary'])
+    description = "<p>%s</p>" % (content_dictionary['summary'])
     description = indent(description, 1)
-    artist = "<p>%s</p>" % (contentDictionary['artist_name'])
+    artist = "<p>%s</p>" % (content_dictionary['artist_name'])
     artist = indent(artist, 1)
 
-    html_dict{'album'=albumString,'album_img'=album_img,'artist'=artist,'description'=description}
+    html_dictionary = {'album': album_string, 'album_img': album_img, 'artist': artist, 'description': description}
 
     f = open("album.html")
     album_template = f.read()
     f.close()
 
-    output = album_template.format(**html_dict)
+    output = album_template.format(**html_dictionary)
     return output
 
 
@@ -35,24 +34,24 @@ def buildArtistPage(content_dictionary):
     artist_template = f.read()
     f.close()
 
-    html_dict = {'artist'='', 'image'='', 'description'= '', 'albums' = ''}
-    artist_String = "<h2> %s </h2>" % (contentDictionary[0]['name'])
-    artist_String = indent(artist_String, 1)
-    image_path = "<img src= %s style = 'width:250px;height:250px'>" % (contentDictionary[0]['image'])
+    html_dictionary = {'artist': '', 'image': '', 'description': '', 'albums': ''}
+    artist_string = "<h2> %s </h2>" % (content_dictionary[0]['name'])
+    artist_string = indent(artist_string, 1)
+    image_path = "<img src= %s style = 'width:250px;height:250px'>" % (content_dictionary[0]['image'])
     image_path = indent(image_path,1)
-    description = "<p>%s</p>" % (contentDictionary[0]['summary'])
+    description = "<p>%s</p>" % (content_dictionary[0]['summary'])
     description = indent(description, 1)
-    albumsString = ""
+    albums_string = ""
 
-    for x in range(1, len(contentDictionary)):
-        albumsString = albumsString + "<p id=album>%s </p>" % (contentDictionary[x]['album_name'])
-    albumsString = indent(albumsString, 1)
-    html_dict['albums'] = albumsString
-    html_dict['artist'] = artist_String
-    html_dict['description']=description
-    html_dict['image']=image_path
+    for x in range(1, len(content_dictionary)):
+        albums_string = albums_string + "<p id=album>%s </p>" % (content_dictionary[x]['album_name'])
+    albums_string = indent(albums_string, 1)
+    html_dictionary['albums'] = albums_string
+    html_dictionary['artist'] = artist_string
+    html_dictionary['description'] = description
+    html_dictionary['image'] = image_path
 
-    output = artist_template.format(**html_dict)
+    output = artist_template.format(**html_dictionary)
     return output
 
 
@@ -60,51 +59,56 @@ def buildArtistPage(content_dictionary):
 def buildHeaderPage():
     """This method returns a string of HTML text for the header component of a web page for the application."""
     
-    f= open("header.html")
-    headerString = f.read()
+    f = open("header.html")
+    header_string = f.read()
     f.close()
-    return headerString
+    return header_string
 
 
 def buildFooterPage():
     """This method returns a string of HTML text for the footer component of a web page for the application."""
     
     f= open("footer.html")
-    footerString = f.read()
+    footer_string = f.read()
     f.close()
-    return footerString
+    return footer_string
 
 
 def buildTimelinePage(years_on_timeline):
     """This method builds HTML text for a complete timeline of albums. The method takes a list of years
     as an argument."""
     
-    timelineString= ""
+    timeline_string= ""
     for year in years_on_timeline:
-        contentDictionary= model.getYearContent(year)
-        timelineString = timelineString + buildYearPage(contentDictionary)
-    return timelineString
+        content_dictionary = model.getYearContent(year)
+        timeline_string = timeline_string + buildYearPage(content_dictionary)
+    return timeline_string
 
 
 def buildYearPage(content_dictionary):
     """This method takes a dictionary of content strings as an argument, and uses it to populate a template HTML file
-    for the year page component of the web application. The method returns a string of HTML text for a year on the timeline."""
-    year = contentDictionary[0]['year']
-    yearString = "<h1> %s </h1>" % (year)
-    yearString = indent(yearString, 1)
-    html_dict = {'year': yearString, 'albums':''}
+    for the year page component of the web application. The method returns a string of HTML text for a year on the
+    timeline."""
+    year = content_dictionary[0]['year']
+    year_string = "<h1> %s </h1>" % (year)
+    year_string = indent(year_string, 1)
+    html_dictionary = {'year': year_string, 'albums': ''}
     
-    albumString = "<ul>\n"
+    albums_in_year_string = "<ul>\n"
 
-    for x in range(0,len(contentDictionary)):
-        albumString = albumString + indent("<li>%s - %s</li>\n"(contentDictionary[x]['album'],contentDictionary[x]['artist']),1)
+    for x in range(0,len(content_dictionary)):
+        album_name = content_dictionary[x]['album']
+        artist_name = content_dictionary[x]['artist']
+        album_string = "<li>%s - %s</li>\n" % (album_name,artist_name)
+        album_string = indent(album_string, 1)
+        albums_in_year_string += album_string
     
-    albumString = indent(albumString, 1)
-    html_dict['albums']= albumString
-    f= open("year.html")
+    albums_in_year_string = indent(albums_in_year_string, 1)
+    html_dictionary['albums'] = albums_in_year_string
+    f = open("year.html")
     year_template = f.read()
     f.close()
-    output = year_template.format(**html_dict)
+    output = year_template.format(**html_dictionary)
 
     return output
 
@@ -115,8 +119,10 @@ def indent(s, k):
     return "\n".join([" "*(4*k) + line for line in s.splitlines()])
 
 def main():
-    year_dict=[{'album'= 'Life is Good','artist'='Nas','year'='2012'}
-    print buildYearPage(year_dict)
+    year_dict = {'album':'Life is Good','artist':'Nas','year':'2012'}
+    dict_list = []
+    dict_list.append(year_dict)
+    print buildYearPage(dict_list)
 
 main()
 
