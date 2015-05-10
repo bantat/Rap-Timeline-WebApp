@@ -119,21 +119,10 @@ def indent(s, k):
 
     return "\n".join([" "*(4*k) + line for line in s.splitlines()])
 
-def main():
+if __name__ == '__main__':
     year_dict1 = {'album': 'Life is Good','artist': 'Nas','year': '2012'}
     year_dict2 = {'album': 'Control System', 'artist': 'Ab-Soul','year':'2012'}
     dict_list = []
     dict_list.append(year_dict1)
     dict_list.append(year_dict2)
     print buildYearPage(dict_list)
-
-main()
-
-
-
-
-
-
-
-
-
