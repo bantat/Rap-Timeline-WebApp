@@ -191,5 +191,5 @@ def main():
     for album in year.getAlbumsForYear():
         print album.getAlbumName()
 
-if __name__ == '__main__':
-    main()
+# if __name__ == '__main__':
+#     main()

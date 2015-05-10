@@ -100,6 +100,7 @@ def getYearContent(year):
         content_dictionary['album'] = album.getAlbumString()
         print "Artist name: " + album.getAlbumArtist()
         artist_name = album.getAlbumArtist()
+        print "CREATING ARTIST OBJECT FROM " + artist_name
         artist_object = data.getArtist(artist_name)
         print "Artist string: " + artist_object.getArtistString()
         content_dictionary['artist'] = artist_object.getArtistString()
@@ -123,5 +124,5 @@ def main():
     for key, value in album_content.iteritems():
         print "['%s','%s']" % (str(key),str(value))
 
-if __name__ == "__main__":
-    main()
+# if __name__ == "__main__":
+#     main()

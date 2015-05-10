@@ -45,6 +45,7 @@ def buildArtistPage(content_dictionary):
 
     for x in range(1, len(content_dictionary)):
         albums_string = albums_string + "<p>%s</p>" % (content_dictionary[x]['album_name'])
+        albums_string += '\n'
     albums_string = indent(albums_string, 1)
     html_dictionary['albums'] = albums_string
     html_dictionary['artist'] = artist_string
@@ -123,18 +124,18 @@ def indent(s, k):
 
     return "\n".join([" "*(4*k) + line for line in s.splitlines()])
 
-if __name__ == '__main__':
-    # year_dict1 = {'album': 'Life is Good','artist': 'Nas','year': '2012'}
-    # year_dict2 = {'album': 'Control System', 'artist': 'Ab-Soul','year':'2012'}
-    # dict_list = []
-    # dict_list.append(year_dict1)
-    # dict_list.append(year_dict2)
-    # print buildYearPage(dict_list)
-    artist_dict1 = {'name':'Eminem','summary':'Eminem Summary','image':'eminem_is_cool.jpg'}
-    artist_dict2 = {'album_id':'The Marshall Mathers LP','year':2000,'album_name':'The Marshall Mathers LP'}
-    artist_dict3 = {'album_id':'The Slim Shady LP','year':1999,'album_name':'The Slim Shady LP'}
-    dict_list = []
-    dict_list.append(artist_dict1)
-    dict_list.append(artist_dict2)
-    dict_list.append(artist_dict3)
-    print buildArtistPage(dict_list)
+# if __name__ == '__main__':
+#     # year_dict1 = {'album': 'Life is Good','artist': 'Nas','year': '2012'}
+#     # year_dict2 = {'album': 'Control System', 'artist': 'Ab-Soul','year':'2012'}
+#     # dict_list = []
+#     # dict_list.append(year_dict1)
+#     # dict_list.append(year_dict2)
+#     # print buildYearPage(dict_list)
+#     artist_dict1 = {'name':'Eminem','summary':'Eminem Summary','image':'eminem_is_cool.jpg'}
+#     artist_dict2 = {'album_id':'The Marshall Mathers LP','year':2000,'album_name':'The Marshall Mathers LP'}
+#     artist_dict3 = {'album_id':'The Slim Shady LP','year':1999,'album_name':'The Slim Shady LP'}
+#     dict_list = []
+#     dict_list.append(artist_dict1)
+#     dict_list.append(artist_dict2)
+#     dict_list.append(artist_dict3)
+#     print buildArtistPage(dict_list)

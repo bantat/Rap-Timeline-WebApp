@@ -15,6 +15,7 @@ def main():
     data_source = DataSource.DataSource()
     parameters = getCgiParameters()
     page_content = model.buildPageBasedOnParameters(parameters)
+    print 'Content-type: text/html\r\n\r\n'
     print page_content
 
 
