@@ -180,7 +180,7 @@ def main():
     artist = data.getArtist("Outkast")
     year = data.getYear(1994)
 
-    for year in data.getYearsOnTimeline:
+    for year in data.getYearsOnTimeline():
         print year
 
     # print "Album: " + album.getAlbumName()
