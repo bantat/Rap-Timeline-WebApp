@@ -18,7 +18,7 @@ def buildPageBasedOnParameters(parameters):
     if parameters['year'] != '':
         year = parameters['year']
         page_content += view.buildHeaderPage()
-        page_content += view.buildYearPage(year)
+        page_content += view.buildYearPage(getYearContent(year))
         page_content += view.buildFooterPage()
     elif parameters['artist'] != '':
         artist = parameters['artist']
