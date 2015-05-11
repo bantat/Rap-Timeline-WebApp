@@ -93,22 +93,29 @@ def buildTimelinePage(years_on_timeline):
 
     timeline_page = ""
 
-    timeline_string = "<p><form action=\"index.py\" method=\"get\">\n"
-    timeline_substring = "<select name=\"year\">\n"
+    timeline_string = "<p><form action=\"index.py\" method=\"get\">"
+    timeline_string += '\n'
+    timeline_substring = "<select name=\"year\">"
+    timeline_substring += '\n'
     timeline_string += indent(timeline_substring,1)
-    timeline_substring = "<option value=\"\" selected>Pick a year</option>\n"
+    timeline_substring = "<option value=\"\" selected>Pick a year</option>"
+    timeline_substring += '\n'
     timeline_string += indent(timeline_substring,2)
 
     # Builds HTML drop-down menu for selecting year
     for year in years_list:
-        timeline_substring = "<option value=\"%d\">%s</option>\n" % (year,str(year))
+        timeline_substring = "<option value=\"%d\">%s</option>" % (year,str(year))
+        timeline_substring += '\n'
         timeline_string += indent(timeline_substring,2)
 
-    timeline_substring = "</select>\n"
+    timeline_substring = "</select>"
+    timeline_substring += '\n'
     timeline_string += indent(timeline_substring,1)
-    timeline_substring = "<input type=\"submit\" value=\"Go\"/>\n"
+    timeline_substring = "<input type=\"submit\" value=\"Go\"/>"
+    timeline_substring += '\n'
     timeline_string += indent(timeline_substring,1)
-    timeline_string += "</form></p>\n\n"
+    timeline_string += "</form></p>"
+    timeline_string += '\n'
 
     timeline_page = timeline_page + timeline_string
 
