@@ -26,7 +26,6 @@ def getCgiParameters():
     parameters = {'year' : '', 'artist' : '','album' : ''}
     if 'year' in data:
         year = data['year'].value
-        year = urlparse.parse_qs(year)
         parameters['year'] = sanitizeUserInput(year)
 
     if 'artist' in data:
