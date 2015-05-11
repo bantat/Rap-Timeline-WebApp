@@ -113,20 +113,21 @@ def getYearContent(year):
     return content_list
 
 def cleanDescription(description):
-    description_edit = ''
+    description_edit = description
     for i in range(len(description)):
         if description[i] == '^':
             description_edit = description[:i]
+            break
 
     description = description_edit
 
     if "\\n" in description:
-        description= description.replace("\\n","</p><p>")
+        description = description.replace("\\n","</p><p>")
     if "\u" in description:
-        description= description.replace("\u","&#x")
+        description = description.replace("\u","&#x")
     if "\\" in description:
         description = description.replace("\\",'')
-    
+
     return description
 
 def main():
