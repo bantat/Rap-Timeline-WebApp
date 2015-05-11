@@ -1,5 +1,6 @@
 body {
-	background-color: #dd0028
+	background-color: #dd1128;
+	text-align: center;
 }
 h1 {
 	text-align: center;
@@ -8,6 +9,9 @@ h1 {
 p {
 	text-align: center;
 	font-family: Palatino
+}
+ul{
+	list-style-type: none;
 }
 li {
 	text-align: center;
@@ -23,5 +27,8 @@ a:hover{
 img{
 	width: 250px;
 	height: 250px;
-	text-align: center;
+}
+table.center{
+	margin-right: auto;
+	margin-left: auto;
 }
