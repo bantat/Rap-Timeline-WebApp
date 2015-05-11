@@ -104,12 +104,14 @@ def buildTimelinePage(years_on_timeline):
     timeline_string += indent(timeline_substring,1)
     timeline_substring = "<input type=\"submit\" value=\"Go\"/>\n"
     timeline_string += indent(timeline_substring,1)
-    timeline_string += "</form></p>\n"
+    timeline_string += "</form></p>\n\n"
 
     #creates a page by putting together the year pages
     for year in years_on_timeline:
+        print year
         content_dictionary = model.getYearContent(year)
         timeline_string = timeline_string + buildYearPage(content_dictionary)
+
     return timeline_string
 
 
