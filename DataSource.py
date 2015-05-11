@@ -41,11 +41,13 @@ class DataSource:
 
     # TODO(Tore) Check cursor returns something
     def getArtist(self, artist_name):
-        self.cursor.execute("SELECT * FROM artists WHERE name = %s;",(artist_name,))
+        sql_string = self.cursor.mogrify("SELECT * FROM artists WHERE name = %s;",(artist_name,))
+        self.cursor.execute(sql_string)
         info = list(self.cursor.fetchone())
 
         album_names = []
-        self.cursor.execute("SELECT name FROM albums WHERE artist = %s;",(artist_name,))
+        sql_string1=self.cursor.mogrify("SELECT name FROM albums WHERE artist = %s;",(artist_name,))
+        self.cursor.execute(sql_string1)
         for item in self.cursor:
             album_names.append(item[0])
 
@@ -60,7 +62,8 @@ class DataSource:
         return artist_objects
 
     def getAlbum(self, album_name):
-        self.cursor.execute("SELECT * FROM albums WHERE name = %s;",(album_name,))
+        sql_string = self.cursor.mogrify("SELECT * FROM albums WHERE name = %s;",(album_name,))
+        self.cursor.execute(sql_string)
 
         album_info = list(self.cursor.fetchone())
 
@@ -75,6 +78,7 @@ class DataSource:
         for row in self.cursor:
             years.append(int(row[0]))
         years = list(set(years))
+        years = reversed(years)
 
         return years
 
@@ -179,11 +183,14 @@ def main():
     artist = data.getArtist("Outkast")
     year = data.getYear(1994)
 
-    print "Album: " + album.getAlbumName()
-    print "Album String: " + album.getAlbumString()
-    print "Year:"
-    print album.getAlbumYear()
-    print "Artist: " + artist.getArtistName()
+    for year in data.getYearsOnTimeline():
+        print year
+
+    # print "Album: " + album.getAlbumName()
+    # print "Album String: " + album.getAlbumString()
+    # print "Year:"
+    # print album.getAlbumYear()
+    # print "Artist: " + artist.getArtistName()
     # print "Artist: " + album.getAlbumArtist()
     # print "Summary: " + album.getAlbumDescription()
     # print "Image: " + album.getAlbumImage()
@@ -192,13 +199,13 @@ def main():
     # print "Summary: " + artist.getArtistDescription()
     # print "Image: " + artist.getArtistImage()
     # print "Albums: "
-    print "Getting albums for Outkast"
-    for album in artist.getArtistAlbums():
-        print album.getAlbumName()
+    # print "Getting albums for Outkast"
+    # for album in artist.getArtistAlbums():
+    #     print album.getAlbumName()
 
-    print "Getting albums for 1994"
-    for album in year.getAlbumsForYear():
-        print album.getAlbumName()
+    # print "Getting albums for 1994"
+    # for album in year.getAlbumsForYear():
+    #     print album.getAlbumName()
 
-# if __name__ == '__main__':
-#     main()
+#if __name__ == '__main__':
+ #   main()

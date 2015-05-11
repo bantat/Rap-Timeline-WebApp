@@ -47,7 +47,7 @@ def getAlbumContent(album_name):
     album_object = data.getAlbum(album_name)
     content_dictionary = {'album':'','summary':'','image':'','year':'','artist_id':'','artist_name':''}
     content_dictionary['album'] = album_object.getAlbumString()
-    content_dictionary['summary'] = album_object.getAlbumDescription()
+    content_dictionary['summary'] = cleanDescription(album_object.getAlbumDescription())
     content_dictionary['image'] = album_object.getAlbumImage()
     content_dictionary['year'] = album_object.getAlbumYear()
     artist_name = album_object.getAlbumArtist()
@@ -70,7 +70,7 @@ def getArtistContent(artist_name):
     artist_dictionary = {'artist_name':'','artist_id':'','summary':'','image':''}
     artist_dictionary['artist_name'] = artist_object.getArtistString()
     artist_dictionary['artist_id'] = artist_object.getArtistName()
-    artist_dictionary['summary'] = artist_object.getArtistDescription()
+    artist_dictionary['summary'] = cleanDescription(artist_object.getArtistDescription())
     artist_dictionary['image'] = artist_object.getArtistImage()
     content_list.append(artist_dictionary)
 
@@ -112,6 +112,23 @@ def getYearContent(year):
 
     return content_list
 
+def cleanDescription(description):
+    description_edit = description
+    for i in range(len(description)):
+        if description[i] == '^':
+            description_edit = description[:i]
+            break
+
+    description = description_edit
+
+    if "\\n" in description:
+        description = description.replace("\\n","</p><p>")
+    if "\u" in description:
+        description = description.replace("\u","&#x")
+    if "\\" in description:
+        description = description.replace("\\",'')
+
+    return description
 
 def main():
     year_content = getYearContent(2012)
