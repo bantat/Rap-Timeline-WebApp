@@ -118,7 +118,7 @@ def buildTimelinePage(years_on_timeline):
     for year in years_on_timeline:
         print year
         content_dictionary = model.getYearContent(year)
-        timeline_year = timeline_year + buildYearPage(content_dictionary
+        timeline_year = timeline_year + buildYearPage(content_dictionary)
 
     timeline_page = timeline_page + timeline_year
 
