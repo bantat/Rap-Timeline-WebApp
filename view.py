@@ -10,15 +10,15 @@ def buildAlbumPage(content_dictionary):
     for the album page component of the web application. The method returns a string of HTML text for the album page"""
 
     album_string = "<h1>%s (%s) </h1>" % (content_dictionary['album'], content_dictionary['year'])
-    album_string = indent(album_string,1)
+    album_string = indent(album_string,3)
     album_img = "<img src=%s align ='middle'>" % (content_dictionary['image'])
-    album_img = indent(album_img,1)
+    album_img = indent(album_img,3)
     description = "<p>%s</p>" % (content_dictionary['summary'])
     description = indent(description, 1)
     path = {'artist':content_dictionary['artist_id']} 
     urlpath = urllib.urlencode(path)
     artist = "<p><a href='index.py?%s'>%s</a></p>" % (urlpath, content_dictionary['artist_name'])
-    artist = indent(artist, 1)
+    artist = indent(artist, 3)
 
     html_dictionary = {'album': album_string, 'album_img': album_img, 'artist': artist, 'description': description}
 
@@ -41,9 +41,9 @@ def buildArtistPage(content_dictionary):
     path = {'artist':content_dictionary[0]['artist_id']} 
     urlpath = urllib.urlencode(path)
     artist_string = "<h2><a href='index.py?%s'>%s </a></h2>" % (urlpath,content_dictionary[0]['artist_name'])
-    artist_string = indent(artist_string, 1)
+    artist_string = indent(artist_string, 3)
     image_path = "<img src= %s align='middle'>" % (content_dictionary[0]['image'])
-    image_path = indent(image_path,1)
+    image_path = indent(image_path,3)
     description = "<p>%s</p>" % (content_dictionary[0]['summary'])
     description = indent(description, 1)
     albums_string = "<ul>\n"
