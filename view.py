@@ -89,6 +89,10 @@ def buildTimelinePage(years_on_timeline):
     """This method builds HTML text for a complete timeline of albums. The method takes a list of years
     as an argument."""
 
+    years_list = years_on_timeline
+
+    timeline_page = ""
+
     timeline_string = "<p><form action=\"index.py\" method=\"get\">\n"
     timeline_substring = "<select name=\"year\">\n"
     timeline_string += indent(timeline_substring,1)
@@ -96,7 +100,7 @@ def buildTimelinePage(years_on_timeline):
     timeline_string += indent(timeline_substring,2)
 
     # Builds HTML drop-down menu for selecting year
-    for year in years_on_timeline:
+    for year in years_list:
         timeline_substring = "<option value=\"%d\">%s</option>\n" % (year,str(year))
         timeline_string += indent(timeline_substring,2)
 
@@ -106,13 +110,19 @@ def buildTimelinePage(years_on_timeline):
     timeline_string += indent(timeline_substring,1)
     timeline_string += "</form></p>\n\n"
 
+    timeline_page = timeline_page + timeline_string
+
+    timeline_year = ""
+
     #creates a page by putting together the year pages
     for year in years_on_timeline:
         print year
         content_dictionary = model.getYearContent(year)
-        timeline_string = timeline_string + buildYearPage(content_dictionary)
+        timeline_year = timeline_year + buildYearPage(content_dictionary
 
-    return timeline_string
+    timeline_page = timeline_page + timeline_year
+
+    return timeline_page
 
 
 def buildYearPage(content_dictionary):
