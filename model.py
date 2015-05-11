@@ -32,6 +32,7 @@ def buildPageBasedOnParameters(parameters):
         page_content += view.buildFooterPage()
     else:
         page_content += view.buildHeaderPage()
+        page_content += view.buildYearsMenu(data_source.getYearsOnTimeline())
         page_content += view.buildTimelinePage(data_source.getYearsOnTimeline())
         page_content += view.buildFooterPage()
 
