@@ -14,29 +14,29 @@ class DataSource:
         USERNAME = 'bantat'
         DB_NAME = 'bantat'
 
-        try:
-            f = open(os.path.join('/cs257', USERNAME))
-            PASSWORD = f.read().strip()
-            f.close()
-        except:
-            sys.exit()
-
-        try:
-            db_connection = psycopg2.connect(user=USERNAME,
-                                     database=DB_NAME,
-                                     password=PASSWORD)
-        except:
-            sys.exit()
-
-        try:
-            cursor = db_connection.cursor()
-        except:
-            sys.exit()
-
-        # PASSWORD = "mike494java"
+        # try:
+        #     f = open(os.path.join('/cs257', USERNAME))
+        #     PASSWORD = f.read().strip()
+        #     f.close()
+        # except:
+        #     sys.exit()
         #
-        # db_connection = psycopg2.connect(user=USERNAME, database=DB_NAME, password=PASSWORD)
-        # self.cursor = db_connection.cursor()
+        # try:
+        #     db_connection = psycopg2.connect(user=USERNAME,
+        #                              database=DB_NAME,
+        #                              password=PASSWORD)
+        # except:
+        #     sys.exit()
+        #
+        # try:
+        #     cursor = db_connection.cursor()
+        # except:
+        #     sys.exit()
+
+        PASSWORD = "mike494java"
+
+        db_connection = psycopg2.connect(user=USERNAME, database=DB_NAME, password=PASSWORD)
+        self.cursor = db_connection.cursor()
 
 
 
