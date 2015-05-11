@@ -17,7 +17,7 @@ def buildAlbumPage(content_dictionary):
     description = indent(description, 1)
     path = {'artist':content_dictionary['artist_id']} 
     urlpath = urllib.urlencode(path)
-    artist = "<p><a href='index.py?%s'>%s</a></p>" % (urlpath, content_dictionary['artist_name'])
+    artist = "<h2><a href='index.py?%s'>%s</a></h2>" % (urlpath, content_dictionary['artist_name'])
     artist = indent(artist, 3)
 
     html_dictionary = {'album': album_string, 'album_img': album_img, 'artist': artist, 'description': description}
