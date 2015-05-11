@@ -9,6 +9,7 @@ def buildAlbumPage(content_dictionary):
     """This method takes a dictionary of content strings as an argument, and uses it to populate a template HTML file
     for the album page component of the web application. The method returns a string of HTML text for the album page"""
 
+    #sets the variables to take their place in the template.html file
     album_string = "<h1>%s (%s) </h1>" % (content_dictionary['album'], content_dictionary['year'])
     album_string = indent(album_string,3)
     album_img = "<img src=%s align ='middle'>" % (content_dictionary['image'])
@@ -25,7 +26,7 @@ def buildAlbumPage(content_dictionary):
     f = open("album.html")
     album_template = f.read()
     f.close()
-
+    #sends the output with the items in the dictionary replaced in the template
     output = album_template.format(**html_dictionary)
     return output
 
@@ -36,7 +37,8 @@ def buildArtistPage(content_dictionary):
     f = open("artist.html")
     artist_template = f.read()
     f.close()
-
+    #The first item in content dictionary is the information for the artist
+    #sets the dictionary values for the template artists.html
     html_dictionary = {'artist': '', 'image': '', 'description': '', 'albums': ''}
     path = {'artist':content_dictionary[0]['artist_id']} 
     urlpath = urllib.urlencode(path)
@@ -47,7 +49,8 @@ def buildArtistPage(content_dictionary):
     description = "<p>%s</p>" % (content_dictionary[0]['summary'])
     description = indent(description, 1)
     albums_string = "<ul>\n"
-
+    #Every item in the list after the first is a dictionary that contains the information for one album
+    #This loop sets the album information to an album string
     for x in range(1, len(content_dictionary)):
         path = {'album':content_dictionary[x]['album_id']} 
         urlpath = urllib.urlencode(path)
@@ -85,8 +88,9 @@ def buildFooterPage():
 def buildTimelinePage(years_on_timeline):
     """This method builds HTML text for a complete timeline of albums. The method takes a list of years
     as an argument."""
-    
+
     timeline_string= ""
+    #creates a page by putting together the year pages
     for year in years_on_timeline:
         content_dictionary = model.getYearContent(year)
         timeline_string = timeline_string + buildYearPage(content_dictionary)
@@ -103,7 +107,8 @@ def buildYearPage(content_dictionary):
     html_dictionary = {'year': year_string, 'albums': ''}
     
     albums_in_year_string = "<ul>\n"
-
+    #each line in a dictionary is an album dictionary
+    #builds a string so that each album is represented by one string
     for x in range(len(content_dictionary)):
         album_id = content_dictionary[x]['album_id']
         album_name = content_dictionary[x]['album_name']
@@ -119,6 +124,7 @@ def buildYearPage(content_dictionary):
             album_string += '\n'
         albums_in_year_string += album_string
 
+    #ends the albums for that year, and stops adding bullets
     albums_in_year_string += '\n'
     albums_in_year_string += "</ul>"
     albums_in_year_string = indent(albums_in_year_string, 1)
@@ -126,6 +132,7 @@ def buildYearPage(content_dictionary):
     f = open("year.html")
     year_template = f.read()
     f.close()
+    #prints the output with the dictionary items taking their place
     output = year_template.format(**html_dictionary)
 
     return output
@@ -135,19 +142,3 @@ def indent(s, k):
     """Indents string argument k number of tab characters (four spaces) for the purposes of HTML page formatting."""
 
     return "\n".join([" "*(4*k) + line for line in s.splitlines()])
-
-# if __name__ == '__main__':
-#     # year_dict1 = {'album': 'Life is Good','artist': 'Nas','year': '2012'}
-#     # year_dict2 = {'album': 'Control System', 'artist': 'Ab-Soul','year':'2012'}
-#     # dict_list = []
-#     # dict_list.append(year_dict1)
-#     # dict_list.append(year_dict2)
-#     # print buildYearPage(dict_list)
-#     artist_dict1 = {'name':'Eminem','summary':'Eminem Summary','image':'eminem_is_cool.jpg'}
-#     artist_dict2 = {'album_id':'The Marshall Mathers LP','year':2000,'album_name':'The Marshall Mathers LP'}
-#     artist_dict3 = {'album_id':'The Slim Shady LP','year':1999,'album_name':'The Slim Shady LP'}
-#     dict_list = []
-#     dict_list.append(artist_dict1)
-#     dict_list.append(artist_dict2)
-#     dict_list.append(artist_dict3)
-#     print buildArtistPage(dict_list)
