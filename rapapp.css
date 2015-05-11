@@ -28,6 +28,12 @@ img{
 	width: 250px;
 	height: 250px;
 }
+table{
+	border-style: solid;
+	border-color: blue;
+	border-width: 5px;
+	border-spacing: 10px;
+}
 table.center{
 	margin-right: auto;
 	margin-left: auto;
