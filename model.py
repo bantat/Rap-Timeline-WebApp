@@ -112,6 +112,7 @@ def getYearContent(year):
 
     return content_list
 
+
 def main():
     year_content = getYearContent(2012)
     for dictionary in year_content:

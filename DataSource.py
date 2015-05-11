@@ -1,3 +1,4 @@
+#/usr/bin/python
 __author__ = 'Tore Banta & Charlie Sarano'
 
 import psycopg2
@@ -11,31 +12,32 @@ class DataSource:
     def __init__(self):
         USERNAME = 'bantat'
         DB_NAME = 'bantat'
-        PASSWORD = "mike494java"
 
-        db_connection = psycopg2.connect(user=USERNAME, database=DB_NAME, password=PASSWORD)
-        self.cursor = db_connection.cursor()
+        try:
+            f = open(os.path.join('/cs257', USERNAME))
+            PASSWORD = f.read().strip()
+            f.close()
+        except:
+            sys.exit()
 
-        # try:
-        #     f = open(os.path.join('/cs257', USERNAME))
-        #     PASSWORD = f.read().strip()
-        #     f.close()
-        # except:
-        #     print "Password read failed"
+        try:
+            db_connection = psycopg2.connect(user=USERNAME,
+                                     database=DB_NAME,
+                                     password=PASSWORD)
+        except:
+            sys.exit()
+
+        try:
+            cursor = db_connection.cursor()
+        except:
+            sys.exit()
+
+        # PASSWORD = "mike494java"
         #
-        # try:
-        #     db_connection = psycopg2.connect(user=USERNAME, database=DB_NAME, password=PASSWORD)
-        # except:
-        #     print "Connection failed"
-        #
-        # try:
-        #     self.cursor = db_connection.cursor()
-        # except:
-        #     print "Cursor failed"
+        # db_connection = psycopg2.connect(user=USERNAME, database=DB_NAME, password=PASSWORD)
+        # self.cursor = db_connection.cursor()
 
-        # PASSWORD = "mike494java" # f.read().strip()
-        # f.close()
-        # db_connection = psycopg2.connect(user = 'bantat',database ='bantat',password=PASSWORD)
+
 
     # TODO(Tore) Check cursor returns something
     def getArtist(self, artist_name):
