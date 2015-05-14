@@ -13,30 +13,29 @@ class DataSource:
     def __init__(self):
         USERNAME = 'bantat'
         DB_NAME = 'bantat'
+        PASSWORD = ''
 
-        # try:
-        #     f = open(os.path.join('/cs257', USERNAME))
-        #     PASSWORD = f.read().strip()
-        #     f.close()
-        # except:
-        #     sys.exit()
-        #
-        # try:
-        #     db_connection = psycopg2.connect(user=USERNAME,
-        #                              database=DB_NAME,
-        #                              password=PASSWORD)
-        # except:
-        #     sys.exit()
-        #
-        # try:
-        #     cursor = db_connection.cursor()
-        # except:
-        #     sys.exit()
+        db_connection = None
+        self.cursor = None
 
-        PASSWORD = "mike494java"
+        try:
+            f = open(os.path.join('/cs257', USERNAME))
+            PASSWORD = f.read().strip()
+            f.close()
+        except:
+            print "Password failed"
 
-        db_connection = psycopg2.connect(user=USERNAME, database=DB_NAME, password=PASSWORD)
-        self.cursor = db_connection.cursor()
+        try:
+            db_connection = psycopg2.connect(user=USERNAME,
+                                     database=DB_NAME,
+                                     password=PASSWORD)
+        except:
+            print "Could not connect"
+
+        try:
+            self.cursor = db_connection.cursor()
+        except:
+            print "Could not get cursor"
 
 
 
