@@ -40,9 +40,7 @@ def buildArtistPage(content_dictionary):
     #The first item in content dictionary is the information for the artist
     #sets the dictionary values for the template artists.html
     html_dictionary = {'artist': '', 'image': '', 'description': '', 'albums': ''}
-    path = {'artist':content_dictionary[0]['artist_id']} 
-    urlpath = urllib.urlencode(path)
-    artist_string = "<h2><a href='index.py?%s'>%s </a></h2>" % (urlpath,content_dictionary[0]['artist_name'])
+    artist_string = "<h2> %s </h2>" % (content_dictionary[0]['artist_name'])
     artist_string = indent(artist_string, 3)
     image_path = "<img src= %s align='middle'>" % (content_dictionary[0]['image'])
     image_path = indent(image_path,3)
