@@ -103,8 +103,8 @@ class DataSource:
 
         albums = []
 
-        for album in info:
-            album_object = self.getAlbum(info[0])
+        for x in range(len(info)):
+            album_object = self.getAlbum(info[x][0])
             albums.append(album_object)
 
         return albums
@@ -240,6 +240,9 @@ def main():
     artists = data.getAllArtistsFromDatabase()
     for artist_object in artists:
         print artist_object.getArtistName()
+    albums = data.getAllAlbumsFromDatabase()
+    for album_object in albums:
+        print album_object.getAlbumName()
 
 if __name__ == '__main__':
     main()
