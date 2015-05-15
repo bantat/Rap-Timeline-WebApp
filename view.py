@@ -15,7 +15,7 @@ def buildAlbumPage(content_dictionary):
     album_img = "<img src=%s align ='middle'>" % (content_dictionary['image'])
     album_img = indent(album_img,3)
     description = "<p>%s</p>" % (content_dictionary['summary'])
-    description = indent(description, 1)
+    description = indent(description, 3)
     path = {'artist':content_dictionary['artist_id']} 
     urlpath = urllib.urlencode(path)
     artist = "<h2><a href='index.py?%s'>%s</a></h2>" % (urlpath, content_dictionary['artist_name'])
@@ -47,7 +47,7 @@ def buildArtistPage(content_dictionary):
     image_path = "<img src= %s align='middle'>" % (content_dictionary[0]['image'])
     image_path = indent(image_path,3)
     description = "<p>%s</p>" % (content_dictionary[0]['summary'])
-    description = indent(description, 1)
+    description = indent(description, 3)
     albums_string = "<ul>\n"
     #Every item in the list after the first is a dictionary that contains the information for one album
     #This loop sets the album information to an album string
@@ -56,7 +56,7 @@ def buildArtistPage(content_dictionary):
         urlpath = urllib.urlencode(path)
         albums_string = albums_string + "<li><a href='index.py?%s'>%s</a></li>" % (urlpath, content_dictionary[x]['album_name'])
         albums_string += '\n'
-    albums_string = indent(albums_string, 1)
+    albums_string = indent(albums_string, 3)
     html_dictionary['albums'] = albums_string
     html_dictionary['artist'] = artist_string
     html_dictionary['description'] = description
