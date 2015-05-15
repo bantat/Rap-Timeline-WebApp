@@ -240,3 +240,6 @@ def main():
     artists = data.getAllArtistsFromDatabase()
     for artist_object in artists:
         print artist_object.getArtistName()
+
+if __name__ == '__main__':
+    main()
