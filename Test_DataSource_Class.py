@@ -61,5 +61,8 @@ class TestDataSource(TestCase):
 if __name__ == '__main__':
     unittest.main()
     TestDataSource.verifyDatabaseConnections()
+    print "Verified DB connections"
     TestDataSource.verifyDatabaseAlbums()
+    print "Verified albums in database"
     TestDataSource.verifyDatabaseArtists()
+    print "Verified artists in database"
