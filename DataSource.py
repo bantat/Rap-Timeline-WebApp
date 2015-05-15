@@ -13,17 +13,17 @@ class DataSource:
     def __init__(self):
         USERNAME = 'bantat'
         DB_NAME = 'bantat'
-        PASSWORD = 'mike494java'
+        PASSWORD = ''
 
         db_connection = None
         self.cursor = None
 
-        # try:
-        #     f = open(os.path.join('/cs257', USERNAME))
-        #     PASSWORD = f.read().strip()
-        #     f.close()
-        # except:
-        #     print "Password failed"
+        try:
+            f = open(os.path.join('/cs257', USERNAME))
+            PASSWORD = f.read().strip()
+            f.close()
+        except:
+            print "Password failed"
 
         try:
             db_connection = psycopg2.connect(user=USERNAME,
