@@ -13,17 +13,17 @@ class DataSource:
     def __init__(self):
         USERNAME = 'bantat'
         DB_NAME = 'bantat'
-        PASSWORD = ''
+        PASSWORD = 'mike494java'
 
         db_connection = None
         self.cursor = None
 
-        try:
-            f = open(os.path.join('/cs257', USERNAME))
-            PASSWORD = f.read().strip()
-            f.close()
-        except:
-            print "Password failed"
+        # try:
+        #     f = open(os.path.join('/cs257', USERNAME))
+        #     PASSWORD = f.read().strip()
+        #     f.close()
+        # except:
+        #     print "Password failed"
 
         try:
             db_connection = psycopg2.connect(user=USERNAME,
@@ -52,7 +52,7 @@ class DataSource:
 
         # This makes a list of items that has the names of the albums, and then makes album object for each album
         album_names = []
-        sql_string1=self.cursor.mogrify("SELECT name FROM albums WHERE artist = %s;",(artist_name,))
+        sql_string1 = self.cursor.mogrify("SELECT name FROM albums WHERE artist = %s;",(artist_name,))
         self.cursor.execute(sql_string1)
         for item in self.cursor:
             album_names.append(item[0])
@@ -68,6 +68,20 @@ class DataSource:
 
         return artist_objects
 
+    def getAllArtistsFromDatabase(self):
+
+        self.cursor.execute("SELECT * FROM artists;")
+        info = list(self.cursor.fetchall())
+
+        artists = []
+
+        for artist in info:
+            artist_object = self.getArtist(info[0])
+            artists.append(artist_object)
+
+        return artists
+
+
     def getAlbum(self, album_name):
         """Takes an album name string as an argument, and returns an album object containing all data about that
         album."""
@@ -81,6 +95,19 @@ class DataSource:
         album_object = Album(album_info[0],album_info[1],album_info[2],album_info[3],album_info[4])
 
         return album_object
+
+    def getAllAlbumsFromDatabase(self):
+
+        self.cursor.execute("SELECT * FROM albums;")
+        info = list(self.cursor.fetchall())
+
+        albums = []
+
+        for album in info:
+            album_object = self.getAlbum(info[0])
+            albums.append(album_object)
+
+        return albums
 
     def getYearsOnTimeline(self):
         """Returns a list of integer year values for which there exists data."""
@@ -210,9 +237,6 @@ class Timeline:
 
 def main():
     data = DataSource()
-    album = data.getAlbum("Yeezus")
-    artist = data.getArtist("Outkast")
-    year = data.getYear(1994)
-
-    for year in data.getYearsOnTimeline():
-        print year
+    artists = data.getAllArtistsFromDatabase()
+    for artist_object in artists:
+        print artist_object.getArtistName()

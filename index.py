@@ -4,16 +4,13 @@
 __author__ = 'Tore Banta & Charlie Sarano'
 
 import model
-import DataSource
 import cgi
 import cgitb
-import urlparse
 
 cgitb.enable()
 
 
 def main():
-    data_source = DataSource.DataSource()
     parameters = getCgiParameters()
     page_content = model.buildPageBasedOnParameters(parameters)
     print 'Content-type: text/html\r\n\r\n'
