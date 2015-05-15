@@ -21,7 +21,7 @@ class TestDataSource(TestCase):
         TestCase.assertEqual(self, image,'http://upload.wikimedia.org/wikipedia/en/8/83/Yeezus_Kanye_West.jpg',
                              "Image path string does not match string returned by getArtistImage")
 
-    def verifyDatabaseConnections(self):
+    def test_DatabaseConnections(self):
         data = DataSource.DataSource()
         albums = data.getAllAlbumsFromDatabase()
         for album in albums:
@@ -34,7 +34,7 @@ class TestDataSource(TestCase):
                                 "check artist: %s for album: %s" % (artist_name, album_name)
                 self.fail(error_message)
 
-    def verifyDatabaseAlbums(self):
+    def test_VerifyDatabaseAlbums(self):
         data = DataSource.DataSource()
         albums = data.getAllAlbumsFromDatabase()
         for album in albums:
@@ -46,7 +46,7 @@ class TestDataSource(TestCase):
             TestCase.assertFalse(self, '}' in album.getAlbumDescription(), error_description2)
             TestCase.assertFalse(self, '{' in album.getAlbumDescription(), error_description2)
 
-    def verifyDatabaseArtists(self):
+    def test_VerifyDatabaseArtists(self):
         data = DataSource.DataSource()
         artists = data.getAllArtistsFromDatabase()
         for artist in artists:
@@ -60,9 +60,3 @@ class TestDataSource(TestCase):
 
 if __name__ == '__main__':
     unittest.main()
-    TestDataSource.verifyDatabaseConnections()
-    print "Verified DB connections"
-    TestDataSource.verifyDatabaseAlbums()
-    print "Verified albums in database"
-    TestDataSource.verifyDatabaseArtists()
-    print "Verified artists in database"
