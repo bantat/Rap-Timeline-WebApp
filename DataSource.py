@@ -221,7 +221,7 @@ class Artist:
 
 
 class Timeline:
-    """This class serves to build a timeline based on one year. This stores the ablum objects for that particular
+    """This class serves to build a timeline based on one year. This stores the album objects for that particular
     year."""
 
     def __init__(self, year, albums):
