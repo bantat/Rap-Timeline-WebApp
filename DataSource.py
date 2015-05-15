@@ -76,7 +76,7 @@ class DataSource:
         artists = []
 
         for artist in info:
-            artist_object = self.getArtist(info[0])
+            artist_object = self.getArtist(info[artist][0])
             artists.append(artist_object)
 
         return artists
