@@ -60,3 +60,6 @@ class TestDataSource(TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+    TestDataSource.verifyDatabaseConnections()
+    TestDataSource.verifyDatabaseAlbums()
+    TestDataSource.verifyDatabaseArtists()
