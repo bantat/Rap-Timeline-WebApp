@@ -34,9 +34,9 @@ table{
 	border-width: 5px;
 	border-spacing: 10px;
 }
-table.center{
-	margin-right: auto;
-	margin-left: auto;
+table{
+	margin-right: 200px;
+	margin-left: 200px;
 }
 html{
 	border-style: solid;
