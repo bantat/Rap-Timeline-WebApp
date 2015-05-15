@@ -48,13 +48,13 @@ def buildArtistPage(content_dictionary):
     image_path = indent(image_path,3)
     description = "<p>%s</p>" % (content_dictionary[0]['summary'])
     description = indent(description, 3)
-    albums_string = "<ul>\n"
+    albums_string = ""
     #Every item in the list after the first is a dictionary that contains the information for one album
     #This loop sets the album information to an album string
     for x in range(1, len(content_dictionary)):
         path = {'album':content_dictionary[x]['album_id']} 
         urlpath = urllib.urlencode(path)
-        albums_string = albums_string + "<li><a href='index.py?%s'>%s</a></li>" % (urlpath, content_dictionary[x]['album_name'])
+        albums_string = albums_string + "<p><a href='index.py?%s'>%s</a></p>" % (urlpath, content_dictionary[x]['album_name'])
         albums_string += '\n'
     albums_string = indent(albums_string, 3)
     html_dictionary['albums'] = albums_string
