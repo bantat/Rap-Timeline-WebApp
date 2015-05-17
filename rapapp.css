@@ -32,9 +32,6 @@ h2 {
 a:link{
 	text-decoration: none;
 }
-a:visited{
-	color: blue;
-}
 a:hover{
 	color: #1178ef;
 }
@@ -69,7 +66,7 @@ table{
 .btn{
 	font: menu;
 	display: inline-block;
-	padding: 2px 8px;
+	padding: 2px 2px 8px 2px;
 	background: ButtonFace;
 	color: ButtonText;
 	border-style: solid;
