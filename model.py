@@ -72,11 +72,14 @@ def buildPageBasedOnParameters(cgi_parameters):
         album_names = []
         for album_object in album_objects:
             album_names.append(album_object.getAlbumName())
+
+        # Checks to see if parameter is valid...
         if album in album_names:
             page_content += view.buildHeaderPage()
             page_content += view.buildAlbumPage(getAlbumContent(album))
             page_content += view.buildFooterPage()
         else:
+            # Otherwise, prints error message on home page (timeline)
             error_description = "Invalid album, %s not in database." % (album)
             page_content += view.buildHeaderPage()
             page_content += view.buildErrorPage(error_description)
@@ -88,10 +91,11 @@ def buildPageBasedOnParameters(cgi_parameters):
         search_string = cgi_parameters['search']
 
         page_content += view.buildHeaderPage()
-        page_content += view.buildSearchResultsPage(getSearchResults(search_string),search_string)
+        page_content += view.buildSearchResultsPage(getSearchResults(search_string), search_string)
         page_content += view.buildFooterPage()
 
     else:
+        # Otherwise, prints home page (timeline)
         page_content += view.buildHeaderPage()
         page_content += view.buildYearsMenu(data_source.getYearsOnTimeline())
         page_content += view.buildTimelinePage(data_source.getYearsOnTimeline())
@@ -226,6 +230,8 @@ def cleanDescription(description):
      text."""
 
     description_edit = description
+
+    # Removes citation text included at the end of some article summaries
     for i in range(len(description)):
         if description[i] == '^':
             description_edit = description[:i]
@@ -233,6 +239,7 @@ def cleanDescription(description):
 
     description = description_edit
 
+    # Replaces python escape characters and Unicode codepoints with HTML equivalent
     if "\\n" in description:
         description = description.replace("\\n","</p><p>")
     if "\u" in description:
