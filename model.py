@@ -163,9 +163,9 @@ def getSearchResults(search_string):
     album_names = []
     artist_names = []
     for album in album_objects:
-        album_names.append(album.getAlbumString())
+        album_names.append(album.getAlbumString().lower())
     for artist in artist_objects:
-        artist_names.append(artist.getArtistString())
+        artist_names.append(artist.getArtistString().lower())
 
     artist_results=[]
     album_results=[]
