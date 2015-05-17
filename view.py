@@ -26,8 +26,8 @@ def buildAlbumPage(content_dictionary):
         spotify_string = indent(spotify_string, 3)
     artist = "<h2><a href='index.py?%s'>%s</a></h2>" % (urlpath, content_dictionary['artist_name'])
     artist = indent(artist, 3)
-
-    more_info="<p><a href=http://en.wikipedia.org/wiki/%s>http://en.wikipedia.org/wiki/%s</a></p>" % (content_dictionary['album_id'], content_dictionary['album_id'])
+    album_url = content_dictionary['album_id'].replace(" ","_")
+    more_info="<p><a href=http://en.wikipedia.org/wiki/%s>http://en.wikipedia.org/wiki/%s</a></p>" % (album_url, album_url)
     more_info = indent(more_info,3)
     html_dictionary = {'album': album_string, 'album_img': album_img, 'artist': artist, 'description': description, 'spotify':spotify_string, 'more_info':more_info}
 
@@ -63,7 +63,8 @@ def buildArtistPage(content_dictionary):
         albums_string = albums_string + "<p><a href='index.py?%s'>%s</a></p>" % (urlpath, content_dictionary[x]['album_name'])
         albums_string += '\n'
     albums_string = indent(albums_string, 3)
-    more_info="<p><a href=http://en.wikipedia.org/wiki/%s>http://en.wikipedia.org/wiki/%s</a></p>" % (content_dictionary[0]['artist_id'],content_dictionary[0]['artist_id'])
+    artist_url=urllib.urlencode(content_dictionary[0]['artist_id'])
+    more_info="<p><a href=http://en.wikipedia.org/wiki/%s>http://en.wikipedia.org/wiki/%s</a></p>" % (artist_url,artist_url)
     more_info = indent(more_info,3)
     html_dictionary['albums'] = albums_string
     html_dictionary['artist'] = artist_string
