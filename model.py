@@ -35,7 +35,7 @@ def buildPageBasedOnParameters(parameters):
         artist_objects = data_source.getAllArtistsFromDatabase()
         artist_names = []
         for artist_object in artist_objects:
-            artist_names.append(artist_object.getArtistName)
+            artist_names.append(artist_object.getArtistName())
 
         if artist in artist_names:
             page_content += view.buildHeaderPage()
@@ -53,7 +53,7 @@ def buildPageBasedOnParameters(parameters):
         album_objects = data_source.getAllAlbumsFromDatabase()
         album_names = []
         for album_object in album_objects:
-            album_names.append(album_object.getAlbumName)
+            album_names.append(album_object.getAlbumName())
         if album in album_names:
             page_content += view.buildHeaderPage()
             page_content += view.buildAlbumPage(getAlbumContent(album))
