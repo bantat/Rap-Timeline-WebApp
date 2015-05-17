@@ -90,7 +90,6 @@ Goblin (album);2011;Tyler, The Creator
 Wolf (Tyler, The Creator album);2013;Tyler, The Creator
 Cherry Bomb (album);2015;Tyler, The Creator
 Doris (album);2013;Earl Sweatshirt
-I Don't Like Shit, I Don't Go Outside: An Album by Earl Sweatshirt;2015;Earl Sweatshirt
 Cancer 4 Cure;2012;El-P
 Take Care (album);2011;Drake (rapper)
 Nothing Was the Same;2013;Drake (rapper)
@@ -106,7 +105,6 @@ Indigoism;2013;The Underachievers
 K.I.D.S. (Mac Miller album);2010;Mac Miller
 Watching Movies with the Sound Off;2013;Mac Miller
 The Stoned Immaculate;2012;Currensy
-Pilot Talk III;2015;Currensy
 The Waters (Mick Jenkins album);2014;Mick Jenkins (rapper)
 Labor Days;2001;Aesop Rock
 None Shall Pass;2007;Aesop Rock
@@ -119,7 +117,6 @@ Revenue Retrievin': Night Shift;2010;E-40
 Revenue Retrievin': Overtime Shift;2011;E-40
 Revenue Retrievin': Graveyard Shift;2011;E-40
 Rolling Papers (mixtape);2010;Domo Genesis
-Seen It All: The Autobiography;2014;Young Jeezy
 Hustle Till I Die;2009;Juicy J
 Stay Trippy;2013;Juicy J
 Most Known Unknown;2005;Three 6 Mafia
