@@ -190,7 +190,7 @@ def buildSearchResultsPage(results_list, search_string):
 
     results_string = ""
     if len(album_results)==0 and len(artist_results) == 0:
-        no_results_string = "< id='no_results'><b> We're sorry, but that search didn't return anything. We may not have the " \
+        no_results_string = "<p id='no_results'><b> We're sorry, but that search didn't return anything. We may not have the " \
         "artist you want, but please feel free to try a different phrase.</b></p>"
         return no_results_string
     else:
