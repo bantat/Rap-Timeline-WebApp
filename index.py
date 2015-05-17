@@ -20,7 +20,7 @@ def main():
 def getCgiParameters():
     """Sanitizes and returns a dictionary of CGI parameters needed for page content generation."""
     data = cgi.FieldStorage()
-    parameters = {'year' : '', 'artist' : '','album' : ''}
+    parameters = {'year' : '', 'artist' : '','album' : '','search' : ''}
     if 'year' in data:
         year = data['year'].value
         parameters['year'] = sanitizeUserInput(year)
@@ -32,6 +32,10 @@ def getCgiParameters():
     if 'album' in data:
         album = data['album'].value
         parameters['album'] = sanitizeUserInput(album)
+
+    if 'search' in data:
+        search = data['search'].value
+        parameters['search'] = sanitizeUserInput(search)
 
     return parameters
 
