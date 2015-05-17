@@ -92,7 +92,7 @@ class DataSource:
         # Converts the database information into a list
         album_info = list(self.cursor.fetchone())
         # Creates an object of the album class, and returns it
-        album_object = Album(album_info[0],album_info[1],album_info[2],album_info[3],album_info[4])
+        album_object = Album(album_info[0],album_info[1],album_info[2],album_info[3],album_info[4],album_info[5])
 
         return album_object
 
@@ -153,12 +153,13 @@ class Album:
     album."""
 
     # Constructs an album with the following information
-    def __init__(self, album_name, album_description, album_image, album_year, album_artist):
+    def __init__(self, album_name, album_description, album_image, album_year, album_artist, album_spotify):
         self.album_name = album_name
         self.album_description = album_description
         self.album_year = album_year
         self.album_image = album_image
         self.album_artist = album_artist
+        self.album_spotify = album_spotify
 
 
     def getAlbumName(self):
@@ -185,6 +186,9 @@ class Album:
 
     def getAlbumArtist(self):
         return self.album_artist
+
+    def getAlbumSpoify(self):
+        return self.album_spotify
 
 
 class Artist:

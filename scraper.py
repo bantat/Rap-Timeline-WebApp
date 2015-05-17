@@ -61,7 +61,7 @@ def generateSqlFromAlbums(file_path):
     albums = []
 
     sql_str = "DROP TABLE IF EXISTS albums;\n"
-    sql_str += "CREATE TABLE albums (name text, description text, image text, year int, artist text);\n"
+    sql_str += "CREATE TABLE albums (name text, description text, image text, year int, artist text, spotify text);\n"
 
     with open(file_path) as file:
         for line in file:
@@ -69,7 +69,8 @@ def generateSqlFromAlbums(file_path):
             album_name = line_split[0]
             album_year = line_split[1]
             album_artist = line_split[2]
-            album_list = [album_name, album_year, album_artist]
+            album_spotify = line_split[3]
+            album_list = [album_name, album_year, album_artist, album_spotify]
             albums.append(album_list)
 
     db_connection = psycopg2.connect(user="bantat",database="bantat",password="mike494java")
@@ -82,11 +83,12 @@ def generateSqlFromAlbums(file_path):
         image = getImageUrlFromWiki(name)
         year = album[1]
         artist = album[2].strip()
+        spotify = album[3].strip()
         # name = name.replace("'","''").replace('"',"\"\"")
         # description = description.replace("'","''").replace('"',"\"\"")
         # image = image.replace("'","''").replace('"',"\"\"")
         # artist = artist.replace("'","''").replace('"',"\"\"")
-        sql_str += cursor.mogrify("INSERT INTO albums (name, description, image, year, artist) VALUES (%s, %s, %s, %s, %s)", (name, description, image, year, artist))
+        sql_str += cursor.mogrify("INSERT INTO albums (name, description, image, year, artist, spotify) VALUES (%s, %s, %s, %s, %s, %s)", (name, description, image, year, artist, spotify))
         sql_str += ";\n"
 
     return sql_str

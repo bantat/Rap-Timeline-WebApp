@@ -1,136 +1,136 @@
-Illmatic;1994;Nas
-It Was Written;1996;Nas
-Stillmatic;2001;Nas
-Life Is Good (Nas album);2012;Nas
-God's Son;2002;Nas
-Ready to Die;1994;The Notorious B.I.G.
-Life After Death;1997;The Notorious B.I.G.
-Reasonable Doubt (album);1996;Jay Z
-The Blueprint;2001;Jay Z
-The Blueprint 3;2009;Jay Z
-American Gangster (album);2007;Jay Z
-The Black Album (Jay-Z album);2003;Jay Z
-The Slim Shady LP;1999;Eminem
-The Marshall Mathers LP;2000;Eminem
-The Eminem Show;2002;Eminem
-The Marshall Mathers LP 2;2013;Eminem
-The Chronic;1992;Dr. Dre
-2001 (Dr. Dre album);1999;Dr. Dre
-Doggystyle;1994;Snoop Dogg
-Bush (album);2015;Snoop Dogg
-Section.80;2011;Kendrick Lamar
-Good Kid, M.A.A.D City;2012;Kendrick Lamar
-To Pimp a Butterfly;2015;Kendrick Lamar
-Longterm Mentality;2011;Ab-Soul
-Control System;2012;Ab-Soul
-These Days... (album);2014;Ab-Soul
-Setbacks (album);2011;Schoolboy Q
-Habits & Contradictions;2012;Schoolboy Q
-Oxymoron (album);2014;Schoolboy Q
-Cilvia Demo;2014;Isaiah Rashad
-Enter the Wu-Tang (36 Chambers);1993;Wu-Tang Clan
-Wu-Tang Forever;1997;Wu-Tang Clan
-All Eyez on Me;1996;Tupac Shakur
-2Pacalypse Now;1991;Tupac Shakur
-Get Rich or Die Tryin' (album);2003;50 Cent
-Only Built 4 Cuban Linx...;1995;Raekwon
-Only Built 4 Cuban Linx... Pt. II;2009;Raekwon
-Teflon Don (album);2010;Rick Ross
-Mastermind (Rick Ross album);2014;Rick Ross
-My Name Is My Name;2013;Pusha T
-Hell Hath No Fury (Clipse album);2006;Clipse
-Lord Willin';2002;Clipse
-Speakerboxxx/The Love Below;2003;Outkast
-Stankonia;2000;Outkast
-Aquemini;1998;Outkast
-ATLiens;1996;Outkast
-Southernplayalisticadillacmuzik;1994;Outkast
-Supreme Clientele;2000;Ghostface Killah
-Fishscale;2006;Ghostface Killah
-36 Seasons;2014;Ghostface Killah
-Straight Outta Compton;1988;N.W.A
-AmeriKKKa's Most Wanted;1990;Ice Cube
-Liquid Swords;1995;Gza
-Moment of Truth (Gang Starr album);1998;Gang Starr
-Run the Jewels (album);2013;Run the Jewels
-Run the Jewels 2;2014;Run the Jewels
-R.A.P. Music;2012;Killer Mike
-The College Dropout;2004;Kanye West
-Late Registration;2005;Kanye West
-Graduation (album);2007;Kanye West
-My Beautiful Dark Twisted Fantasy;2010;Kanye West
-Yeezus;2013;Kanye West
-Take Me to Your Leader (King Geedorah album);2003;MF Doom
-The Infamous;1995;Mobb Deep
-Hell on Earth (Mobb Deep album);1996;Mobb Deep
-Black on Both Sides;1999;Mos Def
-The Ecstatic;2009;Mos Def
-Quality (album);2002;Talib Kweli
-People's Instinctive Travels and the Paths of Rhythm;1990;A Tribe Called Quest
-Midnight Marauders;1993;A Tribe Called Quest
-The Low End Theory;1991;A Tribe Called Quest
-King (T.I. album);2006;T.I.
-Paperwork (T.I. album);2014;T.I.
-Old (Danny Brown album);2013;Danny Brown (rapper)
-XXX (Danny Brown album);2011;Danny Brown (rapper)
-Live. Love. ASAP;2011;ASAP Rocky
-Long. Live. ASAP;2013;ASAP Rocky
-At. Long. Last. ASAP;2015;ASAP Rocky
-Sit Down, Man;2010;Das Racist
-Blue Chips 2;2013;Action Bronson
-1999 (Joey Badass album);2012;Joey Badass
-Summer Knights;2013;Joey Badass
-B4.Da.$$;2015;Joey Badass
-Bastard (mixtape);2009;Tyler, The Creator
-Goblin (album);2011;Tyler, The Creator
-Wolf (Tyler, The Creator album);2013;Tyler, The Creator
-Cherry Bomb (album);2015;Tyler, The Creator
-Doris (album);2013;Earl Sweatshirt
-Cancer 4 Cure;2012;El-P
-Take Care (album);2011;Drake (rapper)
-Nothing Was the Same;2013;Drake (rapper)
-Tha Carter III;2008;Lil Wayne
-Tha Carter IV;2011;Lil Wayne
-I Am Not a Human Being II;2013;Lil Wayne
-Capital Punishment (album);1998;Big Pun
-Lupe Fiasco's Food & Liquor;2006;Lupe Fiasco
-Tetsuo & Youth;2015;Lupe Fiasco
-The Miseducation of Lauryn Hill;1998;Lauryn Hill
-Acid Rap;2013;Chance the Rapper
-Indigoism;2013;The Underachievers
-K.I.D.S. (Mac Miller album);2010;Mac Miller
-Watching Movies with the Sound Off;2013;Mac Miller
-The Stoned Immaculate;2012;Currensy
-The Waters (Mick Jenkins album);2014;Mick Jenkins (rapper)
-Labor Days;2001;Aesop Rock
-None Shall Pass;2007;Aesop Rock
-Trap Lord;2013;ASAP Ferg
-Camp (album);2011;Childish Gambino
-Because the Internet;2013;Childish Gambino
-My Ghetto Report Card;2006;E-40
-Rolling Papers (mixtape);2010;Domo Genesis
-Hustle Till I Die;2009;Juicy J
-Stay Trippy;2013;Juicy J
-Most Known Unknown;2005;Three 6 Mafia
-Indicud;2013;Kid Cudi
-The Odd Future Tape;2008;Odd Future
-The OF Tape Vol. 2;2012;Odd Future
-Stolen Youth (mixtape);2013;Vince Staples
-Hell Can Wait;2014;Vince Staples
-Bizarre Ride II the Pharcyde;1992;The Pharcyde
-Labcabincalifornia;1995;The Pharcyde
-God Loves Ugly;2002;Atmosphere (music group)
-You Can't Imagine How Much Fun We're Having;2005;Atmosphere (music group)
-When Life Gives You Lemons, You Paint That Shit Gold;2008;Atmosphere (music group)
-Southsiders;2014;Atmosphere (music group)
-Electric Circus (album);2002;Common (rapper)
-Be (Common album);2005;Common (rapper)
-Nobody's Smiling;2014;Common (rapper)
-Return of the Mac;2007;Prodigy (rapper)
-Albert Einstein (album);2013;Prodigy (rapper)
-Return of 4Eva;2011;Big K.R.I.T.
-Live from the Underground;2012;Big K.R.I.T.
-Cadillactica;2014;Big K.R.I.T.
-The Documentary;2005;The Game (rapper)
-Doctor's Advocate;2006;The Game (rapper)
-The R.E.D. Album;2011;The Game (rapper)
+Illmatic;1994;Nas;spotify:album:3kEtdS2pH6hKcMU9Wioob1
+It Was Written;1996;Nas;spotify:album:78Fgb88MY0ECc4GVMejqTg
+Stillmatic;2001;Nas;spotify:album:0cLzuJG2UDa0axMQkF7JR6
+Life Is Good (Nas album);2012;Nas;spotify:album:1lAmNllLkJzIYFyjEdAVbd
+God's Son;2002;Nas;spotify:album:3rV1aPkrWyMs6YTvTpSbIY
+Ready to Die;1994;The Notorious B.I.G.;spotify:album:2ymwUMeW3BySLhKNp8UQZ3
+Life After Death;1997;The Notorious B.I.G.;spotify:album:4oVdpzxBJM1KrBm9cjyye7
+Reasonable Doubt (album);1996;Jay Z;spotify:album:5wx5RTvtRkEq7mw8E7RdEr
+The Blueprint;2001;Jay Z;spotify:album:69CmkikTHkGKdkrUZTtyWl
+The Blueprint 3;2009;Jay Z;spotify:album:2CUT0104gySOIvqwtXeFsX
+American Gangster (album);2007;Jay Z;spotify:album:6JlAOzNEYuPBZHf1iTs5kT
+The Black Album (Jay-Z album);2003;Jay Z;spotify:album:4FWvo9oS4gRgHtAwDwUjiO
+The Slim Shady LP;1999;Eminem;spotify:album:1pAakXNiYkGzS7gRzxGyHn
+The Marshall Mathers LP;2000;Eminem;spotify:album:6t7956yu5zYf5A829XRiHC
+The Eminem Show;2002;Eminem;spotify:album:2cWBwpqMsDJC1ZUwz813lo
+The Marshall Mathers LP 2;2013;Eminem;spotify:album:6DN7GcZF1HywzrkGN6Eeqk
+The Chronic;1992;Dr. Dre;NONE
+2001 (Dr. Dre album);1999;Dr. Dre;spotify:album:7q2B4M5EiBkqrlsNW8lB7N
+Doggystyle;1994;Snoop Dogg;spotify:album:7f9KDGqY7X2VLBM5aA66KM
+Bush (album);2015;Snoop Dogg;spotify:album:3UesepjW7Scwi8DV62Qqyn
+Section.80;2011;Kendrick Lamar;spotify:album:13WjgUEEAQp0d9JqojlWp1
+Good Kid, M.A.A.D City;2012;Kendrick Lamar;spotify:album:6PBZN8cbwkqm1ERj2BGXJ1
+To Pimp a Butterfly;2015;Kendrick Lamar;spotify:album:7ycBtnsMtyVbbwTfJwRjSP
+Longterm Mentality;2011;Ab-Soul;spotify:album:446OAWTQsR7utlWr0gDkX0
+Control System;2012;Ab-Soul;spotify:album:26RLXRJA7aOOffZJGjUaSW
+These Days... (album);2014;Ab-Soul;spotify:album:021zMZKO2pUA3yoUQFW2uy
+Setbacks (album);2011;Schoolboy Q;spotify:album:5QGtxFOTTr0Z4TyUQNVOKO
+Habits & Contradictions;2012;Schoolboy Q;spotify:album:6Xz8eKy8TeAyzwGr8QSOAS
+Oxymoron (album);2014;Schoolboy Q;spotify:album:3WrybrSHu1vSZaQegAZTyn
+Cilvia Demo;2014;Isaiah Rashad;spotify:album:6JF49ixyHmOgS0Rsda2k42
+Enter the Wu-Tang (36 Chambers);1993;Wu-Tang Clan;spotify:album:0ujpvwNskNwgU6nb2krDZS
+Wu-Tang Forever;1997;Wu-Tang Clan;spotify:album:4r3TaXjF2b1qwCpxjIpW43
+All Eyez on Me;1996;Tupac Shakur;spotify:album:4CzT5ueFBRpbILw34HQYxi
+2Pacalypse Now;1991;Tupac Shakur;spotify:album:5Ijk8JGsEkwCZd5i0Iy09a
+Get Rich or Die Tryin' (album);2003;50 Cent;spotify:album:4ycNE7y1rp5215g1kkqk1P
+Only Built 4 Cuban Linx...;1995;Raekwon;spotify:album:7btiyhWzUfzxN3ijSiBpC8
+Only Built 4 Cuban Linx... Pt. II;2009;Raekwon;spotify:album:0JWyjptILbIaP42qQKVueQ
+Teflon Don (album);2010;Rick Ross;spotify:album:0jipZxGtkTDHjVerLkzO80
+Mastermind (Rick Ross album);2014;Rick Ross;spotify:album:1iTpsn4fbLlsdKDKFuUfsH
+My Name Is My Name;2013;Pusha T;spotify:album:0IoiCReUTgS8veAp98cHIA
+Hell Hath No Fury (Clipse album);2006;Clipse;spotify:album:1HftQWyKWoGsrmG5lRkJDE
+Lord Willin';2002;Clipse;spotify:album:1Q83nQO2QG81TVa10hW7LX
+Speakerboxxx/The Love Below;2003;Outkast;spotify:album:1UsmQ3bpJTyK6ygoOOjG1r
+Stankonia;2000;Outkast;spotify:album:2tm3Ht61kqqRZtIYsBjxEj
+Aquemini;1998;Outkast;spotify:album:5ceB3rxgXqIRpsOvVzTG28
+ATLiens;1996;Outkast;spotify:album:1IaBCF26OjgYwUCEPaIyC0
+Southernplayalisticadillacmuzik;1994;Outkast;spotify:album:3l5AwLKqQ42VJbc5lTuP8G
+Supreme Clientele;2000;Ghostface Killah;spotify:album:7eaQqVyq6xzAVgsxSzSP83
+Fishscale;2006;Ghostface Killah;spotify:album:7KG4KPy9S7JfbLaXZlTQRG
+36 Seasons;2014;Ghostface Killah;spotify:album:2jhHhqOtflKaJeMEgWD82S
+Straight Outta Compton;1988;N.W.A;spotify:album:12UO1VN1TffieQyDyzjivp
+AmeriKKKa's Most Wanted;1990;Ice Cube;spotify:album:3AI5kAUjgNtZBwFRi6opDc
+Liquid Swords;1995;Gza;spotify:album:3k8xoyOXkGgZxUKgpmxz4P
+Moment of Truth (Gang Starr album);1998;Gang Starr;spotify:album:5f6Nz2v1DESbpu1NerEql2
+Run the Jewels (album);2013;Run the Jewels;spotify:album:0hVXUOlozgihW44G4Il0Gu
+Run the Jewels 2;2014;Run the Jewels;spotify:album:2lPYlP4eumsjz6LBG8GCbG
+R.A.P. Music;2012;Killer Mike;spotify:album:5EAhUoAz1G3WTvIfGZvmrh
+The College Dropout;2004;Kanye West;spotify:album:3ff2p3LnR6V7m6BinwhNaQ
+Late Registration;2005;Kanye West;spotify:album:5ll74bqtkcXlKE7wwkMq4g
+Graduation (album);2007;Kanye West;spotify:album:3SZr5Pco2oqKFORCP3WNj9
+My Beautiful Dark Twisted Fantasy;2010;Kanye West;spotify:album:20r762YmB5HeofjMCiPMLv
+Yeezus;2013;Kanye West;spotify:album:7D2NdGvBHIavgLhmcwhluK
+Take Me to Your Leader (King Geedorah album);2003;MF Doom;spotify:album:1mrhahrlJu5JfzgeV6Cy8t
+The Infamous;1995;Mobb Deep;spotify:album:1cCAb1vN8uUsdfEylVmTLs
+Hell on Earth (Mobb Deep album);1996;Mobb Deep;spotify:album:6BWf3fxsgSDhES4Cm4oyy5
+Black on Both Sides;1999;Mos Def;spotify:album:5gK2l2LgWY0BA4p9uy27z6
+The Ecstatic;2009;Mos Def;spotify:album:2Q8ugdrlhqWh3jJ7b6oIjY
+Quality (album);2002;Talib Kweli;spotify:album:0apVddbk7Juec0DV4LNiBg
+People's Instinctive Travels and the Paths of Rhythm;1990;A Tribe Called Quest;spotify:album:4Qt1ZvWZ3DoKDimDMesZd5
+Midnight Marauders;1993;A Tribe Called Quest;spotify:album:4v5x3Oo3UjQ9YmF3hRAip5
+The Low End Theory;1991;A Tribe Called Quest;spotify:album:1p12OAWwudgMqfMzjMvl2a
+King (T.I. album);2006;T.I.;spotify:album:6g015VCIuTF7FAAGvC98HO
+Paperwork (T.I. album);2014;T.I.;spotify:album:4FADvCXok2GhepAWLE8Fs1
+Old (Danny Brown album);2013;Danny Brown (rapper);spotify:album:5SC0415RIGVX9ZfL0tfbAl
+XXX (Danny Brown album);2011;Danny Brown (rapper);spotify:album:3j21GO4l4W0w7hdF8JVPmo
+Live. Love. ASAP;2011;ASAP Rocky;NONE
+Long. Live. ASAP;2013;ASAP Rocky;spotify:album:1E1eyI5uGllppJZCxNoF9w
+At. Long. Last. ASAP;2015;ASAP Rocky;NONE
+Sit Down, Man;2010;Das Racist;NONE
+Blue Chips 2;2013;Action Bronson;NONE
+1999 (Joey Badass album);2012;Joey Badass;spotify:album:100sbzLt8tFdeksrctxIG1
+Summer Knights;2013;Joey Badass;spotify:album:4V5UppLGiuDvo4HpVsDc8U
+B4.Da.$$;2015;Joey Badass;spotify:album:1rJXQEZ5DnUalRSPB3R0WO
+Bastard (mixtape);2009;Tyler, The Creator;NONE
+Goblin (album);2011;Tyler, The Creator;spotify:album:40ucxnGO51wcTGNI6xge6z
+Wolf (Tyler, The Creator album);2013;Tyler, The Creator;spotify:album:40QTqOBBxCEIQlLNdSjFQB
+Cherry Bomb (album);2015;Tyler, The Creator;spotify:album:621OhgnZJ7Pz8iUazct1In
+Doris (album);2013;Earl Sweatshirt;spotify:album:5vRfIDOPJHy3W2wHWbzLlE
+Cancer 4 Cure;2012;El-P;spotify:album:5zCfx4NLmvjmI3mwYJgdlT
+Take Care (album);2011;Drake (rapper);spotify:album:63WdJvk8G9hxJn8u5rswNh
+Nothing Was the Same;2013;Drake (rapper);spotify:album:2gXTTQ713nCELgPOS0qWyt
+Tha Carter III;2008;Lil Wayne;spotify:album:5BGzOpea6At0Nd7tYtYZOP
+Tha Carter IV;2011;Lil Wayne;spotify:album:1uuSC0RCJB3dSp8Mb6GflZ
+I Am Not a Human Being II;2013;Lil Wayne;spotify:album:4rhNBjL39LW5tuZgRShtnx
+Capital Punishment (album);1998;Big Pun;spotify:album:3IIHk2ZLXKWuVAjCbQ9g4Y
+Lupe Fiasco's Food & Liquor;2006;Lupe Fiasco;spotify:album:0TDJRkEr2SrhWTetdkEzED
+Tetsuo & Youth;2015;Lupe Fiasco;spotify:album:7F58zK8t8whSFjX5X09d28
+The Miseducation of Lauryn Hill;1998;Lauryn Hill;spotify:album:2Uc0HAF0Cj0LAgyzYZX5e3
+Acid Rap;2013;Chance the Rapper;NONE
+Indigoism;2013;The Underachievers;spotify:album:1dB64RmXsX57irQpWrjZGp
+K.I.D.S. (Mac Miller album);2010;Mac Miller;NONE
+Watching Movies with the Sound Off;2013;Mac Miller;spotify:album:3T02fCxAjApu18taJLLbyN
+The Stoned Immaculate;2012;Currensy;spotify:album:6bmIK4DcRUAub2ppHMeLvq
+The Waters (Mick Jenkins album);2014;Mick Jenkins (rapper);spotify:album:3q7rkjDfYI9J1IMaWMbRTV
+Labor Days;2001;Aesop Rock;spotify:album:1EozNWj9YemnvgrpvqHpca
+None Shall Pass;2007;Aesop Rock;spotify:album:7mB5yhTfOUdtLdjRAsPY4t
+Trap Lord;2013;ASAP Ferg;spotify:album:3smlfAmejcKMmAPg1G2Kki
+Camp (album);2011;Childish Gambino;spotify:album:4q5E2s5u5X5HT4UMJpbMKE
+Because the Internet;2013;Childish Gambino;spotify:album:0zi2TaQkYxfXIBvl2yTjQJ
+My Ghetto Report Card;2006;E-40;spotify:album:3VqKqWHOHYfZqttJ0WwQHl
+Rolling Papers (mixtape);2010;Domo Genesis;NONE
+Hustle Till I Die;2009;Juicy J;spotify:album:0KFQN5SKkh2OLUA1T5xHMi
+Stay Trippy;2013;Juicy J;spotify:album:7h1ut6IUbndKY7QrqcbAND
+Most Known Unknown;2005;Three 6 Mafia;spotify:album:0Pe9KCcaFK7CkeZPWXCuaB
+Indicud;2013;Kid Cudi;spotify:album:5svfcB1dHyUWTWlhb4TihU
+The Odd Future Tape;2008;Odd Future;NONE
+The OF Tape Vol. 2;2012;Odd Future;spotify:album:7ibEo7IK9E9mi2sU5rJNDC
+Stolen Youth (mixtape);2013;Vince Staples;NONE
+Hell Can Wait;2014;Vince Staples;spotify:album:7mxpMxmMM8RN39YRlo08v7
+Bizarre Ride II the Pharcyde;1992;The Pharcyde;spotify:album:48kU5gP41TqZEw32Cwhsna
+Labcabincalifornia;1995;The Pharcyde;spotify:album:25TUVygHpPTMBO4qq22MI0
+God Loves Ugly;2002;Atmosphere (music group);spotify:album:5EXaWmrRlzRe5uNS6v7y3K
+You Can't Imagine How Much Fun We're Having;2005;Atmosphere (music group);spotify:album:1hBI1qvcmBmqga4rTJwCEG
+When Life Gives You Lemons, You Paint That Shit Gold;2008;Atmosphere (music group);spotify:album:1HT8zTMIromrZOA4wnbGdV
+Southsiders;2014;Atmosphere (music group);spotify:album:34YOUaExxiAdv7ismVvz31
+Electric Circus (album);2002;Common (rapper);spotify:album:4eD2SoySMPRl0SBv7rqk1X
+Be (Common album);2005;Common (rapper);spotify:album:2UuvBxV56QWWj2uviGS0up
+Nobody's Smiling;2014;Common (rapper);spotify:album:0ymZEUngBCetAJcJaqO63b
+Return of the Mac;2007;Prodigy (rapper);spotify:album:3OvPrw4mnjqnd7trnNr8G7
+Albert Einstein (album);2013;Prodigy (rapper);spotify:album:3Uvi88msGcHXxyvlFGxUC2
+Return of 4Eva;2011;Big K.R.I.T.;NONE
+Live from the Underground;2012;Big K.R.I.T.;spotify:album:4XbtyxEVtGMVguoraULRLU
+Cadillactica;2014;Big K.R.I.T.;spotify:album:6S1ItzAtGWyBLGiFkeMRc2
+The Documentary;2005;The Game (rapper);spotify:album:4PrPbmm0gKvaD3rerOXFg8
+Doctor's Advocate;2006;The Game (rapper);spotify:album:0GKZO3H9pNVgTuhwCJ7TJp
+The R.E.D. Album;2011;The Game (rapper);spotify:album:6PvZnd9Q2ymDo3gpoM5I37

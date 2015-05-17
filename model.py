@@ -47,11 +47,12 @@ def getAlbumContent(album_name):
     data = DataSource.DataSource()
 
     album_object = data.getAlbum(album_name)
-    content_dictionary = {'album':'','summary':'','image':'','year':'','artist_id':'','artist_name':''}
+    content_dictionary = {'album':'','summary':'','image':'','year':'','artist_id':'','artist_name':'','spotify':''}
     content_dictionary['album'] = album_object.getAlbumString()
     content_dictionary['summary'] = cleanDescription(album_object.getAlbumDescription())
     content_dictionary['image'] = album_object.getAlbumImage()
     content_dictionary['year'] = album_object.getAlbumYear()
+    content_dictionary['spotify'] = album_object.getAlbumSpoify()
     artist_name = album_object.getAlbumArtist()
     artist_object = data.getArtist(artist_name)
     content_dictionary['artist_id'] = artist_object.getArtistName()
