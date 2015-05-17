@@ -20,7 +20,7 @@ def buildAlbumPage(content_dictionary):
     urlpath = urllib.urlencode(path)
     spotify_id = content_dictionary['spotify']
     spotify_string= ""
-    if spotify_id != "NONE"
+    if spotify_id != "NONE":
         spotify_string = "<iframe src='https://embed.spotify.com/?uri=%s' frameborder = '0' width = '300' height= '380' allowtransparency = 'true'></iframe> " % (spotify_id)
         spotify_string = indent(spotify_string,3)
     artist = "<h2><a href='index.py?%s'>%s</a></h2>" % (urlpath, content_dictionary['artist_name'])
