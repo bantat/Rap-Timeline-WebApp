@@ -68,7 +68,7 @@ def buildPageBasedOnParameters(parameters):
     elif parameters['search'] != '':
         search_string = parameters['search']
         page_content += view.buildHeaderPage()
-        page_content += view.buildSearchResultsPage(getSearchResults(search_string))
+        page_content += view.buildSearchResultsPage(getSearchResults(search_string),search_string)
         page_content += view.buildFooterPage()
     else:
         page_content += view.buildHeaderPage()
