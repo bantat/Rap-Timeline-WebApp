@@ -194,6 +194,19 @@ def buildSearchResultsPage(results_list):
         "artist you want, but please feel free to try a different phrase.</b></p>"
         return no_results_string
 
+    else:
+        for album in album_results:
+            album_name = album.getAlbumName()
+            album_string = album.getAlbumString()
+            artist = album.getAlbumArtist()
+            album_link = "<h2><a href='index.py?album=%s'>%s</a></h2>" % (album_name, album_string)
+            album_link += "<p> An album by <a href='index.py?artist=%s'>%s</a></p>" % (artist, artist)
+            results_string += album_link
+        for artist in artist_results:
+            artist_name = artist.getArtistName()
+            artist_string = artist.getArtistString()
+            artist_link = "<h2><a href='index.py?artist=%s'>%s</a></h2>" % (artist_name,artist_string)
+            results_string +=artist_link
     
 
     return results_string

@@ -189,7 +189,7 @@ def getSearchResults(search_string):
     artist_results = list(set(artist_results))
     album_results = list(set(album_results))
     
-    total_results= [artist_results,album_results]
+    total_results= [album_results,artist_results]
     return total_results
 
 def cleanDescription(description):
