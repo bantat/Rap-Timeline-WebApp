@@ -170,20 +170,20 @@ def getSearchResults(search_string):
     artist_results=[]
     album_results=[]
     if " " not in search_string:
-        for x in len(album_names):
+        for x in range(len(album_names)):
             if search_string in album_names[x]:
                 album_results.append(album_objects[x])
-        for x in len(artist_names):
+        for x in range(len(artist_names)):
             if search_string in artist_names[x]:
                 artist_results.append(artist_objects[x])
 
     if " " in search_string:
         word_list = search_string.split(" ")
         for word in word_list:
-            for x in len(album_names):
+            for x in range(len(album_names)):
                 if word in album_names[x]:
                     album_results.append(album_objects[x])
-            for x in len(artist_names):
+            for x in range(len(artist_names)):
                 if word in artist_names[x]:
                     artist_results.append(artist_objects[x])
     artist_results = list(set(artist_results))
