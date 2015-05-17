@@ -123,14 +123,8 @@ def getYearContent(year):
 
 def getSearchResults(search_string):
 
-    album_results = []
-    artist_results = []
-
-    # Implement me here
-
-    total_results = []
-    total_results.append(album_results)
-    total_results.append(artist_results)
+    data_source = DataSource.DataSource()
+    total_results = data_source.getSearchResults(search_string)
 
     return total_results
 
