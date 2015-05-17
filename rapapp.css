@@ -9,6 +9,9 @@ h1 {
 	text-align: center;
 	font-family: Palatino
 }
+h3 {
+	font-family: Palatino
+}
 p {
 	text-align: center;
 	font-family: Palatino
@@ -28,9 +31,6 @@ h2 {
 }
 a:link{
 	text-decoration: none;
-}
-a:visited{
-	color: blue;
 }
 a:hover{
 	color: #1178ef;
@@ -62,4 +62,13 @@ table{
 #year{
 	text-decoration: underline;
 	font-size: 50px
+}
+.btn{
+	font: menu;
+	display: inline-block;
+	padding: 2px 2px 8px 2px;
+	background: ButtonFace;
+	color: ButtonText;
+	border-style: solid;
+	border-width: 2px;
 }
