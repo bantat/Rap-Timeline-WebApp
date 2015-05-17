@@ -1,6 +1,15 @@
 #/usr/bin/python
 
-__author__ = 'Tore Banta & Charlie Sarano'
+"""A module used for accessing information stored in the SQL database. The module contains classes for Album, Artist,
+and Timeline objects. The module also contains a core class DataSource which is used to establish a connection to the
+database, and retrieve the necessary information to construct each of the other classes.
+
+By Tore Banta & Charlie Sarano
+CS 257 - Software Design (Jadrian Miles)
+Carleton College
+"""
+
+__author__ = 'Tore Banta, Charlie Sarano'
 
 import psycopg2
 import os.path
@@ -8,9 +17,10 @@ import sys
 
 
 class DataSource:
+    """Class for connecting to and accessing information from the database."""
 
-    # TODO(Grader) We were unable to access our password for this phase of the project
     def __init__(self):
+        """Constructor takes no arguments, and stores a database connection cursor object as an instance variable."""
         USERNAME = 'bantat'
         DB_NAME = 'bantat'
         PASSWORD = 'mike494java'
@@ -18,6 +28,7 @@ class DataSource:
         db_connection = None
         self.cursor = None
 
+        # Attempts to read the database password from a file stored on the server, and assign to variable PASSWORD
         # try:
         #     f = open(os.path.join('/cs257', USERNAME))
         #     PASSWORD = f.read().strip()
@@ -25,21 +36,20 @@ class DataSource:
         # except:
         #     print "Password failed"
 
+        # Attempts to establish a database connection using password string variable read from file on the server
         try:
             db_connection = psycopg2.connect(user=USERNAME,
                                      database=DB_NAME,
                                      password=PASSWORD)
         except:
-            print "Could not connect"
+            sys.exit()
 
+        # Attempts to create a cursor object using the database connection
         try:
             self.cursor = db_connection.cursor()
         except:
-            print "Could not get cursor"
+            sys.exit()
 
-
-
-    # TODO(Tore) Check cursor returns something
     def getArtist(self, artist_name):
         """Takes an artist name string as an argument, and returns an artist object containing all data about that
         artist."""
@@ -47,10 +57,10 @@ class DataSource:
         # Sets the select statement for the artist we want
         sql_string = self.cursor.mogrify("SELECT * FROM artists WHERE name = %s;",(artist_name,))
         self.cursor.execute(sql_string)
-        # The list should only be one item with the name, description, and image path as 0, 1, and 2 respectively
+        # Cursor should return one item with the name, description, and image path for the artist
         info = list(self.cursor.fetchone())
 
-        # This makes a list of items that has the names of the albums, and then makes album object for each album
+        # Makes a list of items that has the names of the albums, and then constructs an album object for each album
         album_names = []
         sql_string1 = self.cursor.mogrify("SELECT name FROM albums WHERE artist = %s;",(artist_name,))
         self.cursor.execute(sql_string1)
@@ -69,6 +79,7 @@ class DataSource:
         return artist_objects
 
     def getAllArtistsFromDatabase(self):
+        """Returns a list of Artist objects for all artists stored in the database."""
 
         self.cursor.execute("SELECT * FROM artists;")
         info = list(self.cursor.fetchall())
@@ -80,7 +91,6 @@ class DataSource:
             artists.append(artist_object)
 
         return artists
-
 
     def getAlbum(self, album_name):
         """Takes an album name string as an argument, and returns an album object containing all data about that
@@ -97,6 +107,7 @@ class DataSource:
         return album_object
 
     def getAllAlbumsFromDatabase(self):
+        """Returns a list of Album objects for all albums stored in the database."""
 
         self.cursor.execute("SELECT * FROM albums;")
         info = list(self.cursor.fetchall())
@@ -110,7 +121,7 @@ class DataSource:
         return albums
 
     def getYearsOnTimeline(self):
-        """Returns a list of integer year values for which there exists data."""
+        """Returns a list of integers indicating which years have information in the database."""
 
         # Selects every year in the database
         self.cursor.execute("SELECT year FROM albums")
@@ -127,8 +138,8 @@ class DataSource:
         return years
 
     def getYear(self, year):
-        """Takes an integer year value as an argument, and returns a year object containing album objects for albums
-        which were released during that year."""
+        """Takes an integer year value as an argument, and returns a year object containing album objects for each of
+        the albums which were released during that year."""
 
         # Selects the name of the albums with the year that is passed, and places them in album_names
         self.cursor.execute("SELECT name FROM albums WHERE year= %s;",(year,))
@@ -147,65 +158,13 @@ class DataSource:
 
         return timeline_object
 
-    def getSearchResults(self, search_string):
-        album_list = []
-        artist_list = []
-        if " " not in search_string:
-            search_parameter = "%" + search_string + "%"
-            self.cursor.execute("SELECT * FROM albums WHERE name LIKE %s;", (search_parameter,))
-            
-            for album in self.cursor:
-                album_object = DataSource.getAlbum(album[0])
-                album_list.append(album_object)
-
-            self.cursor.execute("SELECT * FROM artists WHERE name LIKE %s;", (search_parameter,))
-
-            for artist in self.cursor:
-                artist_object = DataSource.getArtist(artist[0])
-                artist_list.append(artist_object)
-
-        elif " " in search_string:
-            list_of_words = search_string.split(" ")
-            x = 0
-            word_parameters = []
-            sql_command = "SELECT * FROM albums WHERE name" 
-            for word in list_of_words:
-                word_parameter = "\'%" + list_of_words[x] + "%\'"
-                if x == 0:
-                    sql_string = "LIKE %s" % (word_parameter)
-                if x > 0:
-                    sql_string = "OR name LIKE %s" % (word_parameter)
-                sql_command = sql_command + sql_string
-            self.cursor.execute(sql_command)
-
-            for album in self.cursor:
-                album_object = DataSource.getAlbum(album[0])
-                album_list.append(album_object)
-
-            sql_command = "SELECT * FROM artists WHERE name" 
-            for word in list_of_words:
-                word_parameter = "\'%" + list_of_words[x] + "%\'"
-                if x == 0:
-                    sql_string = "LIKE %s" % (word_parameter)
-                if x > 0:
-                    sql_string = "OR name LIKE %s" % (word_parameter)
-                sql_command = sql_command + sql_string
-            self.cursor.execute(sql_command)
-
-            for artist in self.cursor:
-                album_object = DataSource.getAlbum(artist[0])
-                album_list.append(album_object)
-
-        results = [album_list, artist_list]
-
-        return results
 
 class Album:
-    """This class serves as the class that allows other modules to access information particular to one 
-    album."""
+    """Class for storing and retrieving information about a particular album within the database."""
 
-    # Constructs an album with the following information
     def __init__(self, album_name, album_description, album_image, album_year, album_artist, album_spotify):
+        """Constructor takes arguments for the album name (Wiki article title), description, image link, release year,
+         artist, and Spotify URL."""
         self.album_name = album_name
         self.album_description = album_description
         self.album_year = album_year
@@ -213,12 +172,13 @@ class Album:
         self.album_artist = album_artist
         self.album_spotify = album_spotify
 
-
     def getAlbumName(self):
+        """Returns the album name string, which is stored as the Wikipedia article title."""
         return self.album_name
 
-
     def getAlbumString(self):
+        """Returns the album name (Wikipedia article title) stripped of additional identifying information, so that it
+         is a human readable string. EX: 2001 (Dr. Dre album) is returned as 2001."""
         album_string = self.album_name
 
         for i in range(len(self.album_name)):
@@ -228,36 +188,44 @@ class Album:
         return album_string
 
     def getAlbumDescription(self):
+        """Returns the album description."""
         return self.album_description
 
     def getAlbumYear(self):
+        """Returns the album release year."""
         return self.album_year
 
     def getAlbumImage(self):
+        """Returns the album image link."""
         return self.album_image
 
     def getAlbumArtist(self):
+        """Returns the album artist's name as a string (Wikipedia article title)."""
         return self.album_artist
 
     def getAlbumSpotify(self):
+        """Returns the album's Spotify URL."""
         return self.album_spotify
 
 
 class Artist:
-    """This class serves as the class that will allow other modules to access information particular to one 
-    artist."""
+    """Class for storing and retrieving information about a particular artist within the database."""
 
-    #constructs an artist object with this information stored
     def __init__(self, artist_name, artist_description, artist_image, artist_albums):
+        """Constructor takes arguments for the artist name (Wiki article title), description, image link, and a list of
+        album objects for each album in the database by the artist."""
         self.artist_name = artist_name
         self.artist_description = artist_description
         self.artist_image = artist_image
         self.artist_albums = artist_albums
-    #returns the name of the album according to the wikipedia
+
     def getArtistName(self):
+        """Returns the artist name string, which is stored as the Wikipedia article title."""
         return self.artist_name
-    #returns the name of the artist without any qualifiers from the Wikipedia
+
     def getArtistString(self):
+        """Returns the artist name (Wikipedia article title) stripped of additional identifying information, so that it
+         is a human readable string. EX: Common (rapper) is returned as Common."""
         artist_string = self.artist_name
 
         for i in range(len(self.artist_name)):
@@ -267,38 +235,31 @@ class Artist:
         return artist_string
 
     def getArtistDescription(self):
+        """Returns the artist description."""
         return self.artist_description
 
     def getArtistImage(self):
+        """Returns the artist image link."""
         return self.artist_image
 
     def getArtistAlbums(self):
+        """Returns a list of album objects for each album in the database by the artist."""
         return self.artist_albums
 
 
 class Timeline:
-    """This class serves to build a timeline based on one year. This stores the album objects for that particular
-    year."""
+    """Class for storing and retrieving information about a particular year within the database."""
 
     def __init__(self, year, albums):
+        """Constructor takes arguments for the integer value of the year, and a list of album objects for albums which
+         were released during the year."""
         self.year = year
         self.albums = albums
 
     def getYear(self):
+        """Returns the integer year value."""
         return self.year
 
     def getAlbumsForYear(self):
+        """Returns a list of album objects for albums which were released during the year."""
         return self.albums
-
-
-def main():
-    data = DataSource()
-    artists = data.getAllArtistsFromDatabase()
-    for artist_object in artists:
-        print artist_object.getArtistName()
-    albums = data.getAllAlbumsFromDatabase()
-    for album_object in albums:
-        print album_object.getAlbumName()
-
-if __name__ == '__main__':
-    main()
