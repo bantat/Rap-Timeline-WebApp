@@ -193,9 +193,10 @@ def buildSearchResultsPage(results_list, search_string):
         no_results_string = "<p><b> We're sorry, but that search didn't return anything. We may not have the" \
         "artist you want, but please feel free to try a different phrase.</b></p>"
         return no_results_string
-
+    num_results=0
     else:
         for album in album_results:
+            num_results += 1
             album_name = album.getAlbumName()
             album_string = album.getAlbumString()
             artist = album.getAlbumArtist()
@@ -203,6 +204,7 @@ def buildSearchResultsPage(results_list, search_string):
             album_link += "<p> An album by <a href='index.py?artist=%s'>%s</a></p>" % (artist, artist)
             results_string += album_link
         for artist in artist_results:
+            num_results += 1
             artist_name = artist.getArtistName()
             artist_string = artist.getArtistString()
             artist_link = "<h2><a href='index.py?artist=%s'>%s</a></h2>" % (artist_name,artist_string)
@@ -213,7 +215,7 @@ def buildSearchResultsPage(results_list, search_string):
     f.close()
     search_string += "..."
 
-    html_dictionary = {'search_string':search_string,'results':results_string}
+    html_dictionary = {'search_string':search_string,'results':results_string, 'num_results':num_results}
     output= search_template.format(**html_dictionary)
 
     return output
