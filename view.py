@@ -193,8 +193,8 @@ def buildSearchResultsPage(results_list, search_string):
         no_results_string = "<p><b> We're sorry, but that search didn't return anything. We may not have the" \
         "artist you want, but please feel free to try a different phrase.</b></p>"
         return no_results_string
-    num_results=0
     else:
+        num_results=0
         for album in album_results:
             num_results += 1
             album_name = album.getAlbumName()
