@@ -10,7 +10,7 @@ def buildAlbumPage(content_dictionary):
     for the album page component of the web application. The method returns a string of HTML text for the album page"""
 
     #sets the variables to take their place in the template.html file
-    album_string = "<h1>%s (%s) </h1>" % (content_dictionary['album'], content_dictionary['year'])
+    album_string = "<h1>%s (%s) </h1>" % (content_dictionary['album_name'], content_dictionary['year'])
     album_string = indent(album_string,3)
     album_img = "<img src=%s align ='middle'>" % (content_dictionary['image'])
     album_img = indent(album_img,3)
@@ -27,7 +27,7 @@ def buildAlbumPage(content_dictionary):
     artist = "<h2><a href='index.py?%s'>%s</a></h2>" % (urlpath, content_dictionary['artist_name'])
     artist = indent(artist, 3)
 
-    more_info="<p><a href=http://en.wikipedia.org/wiki/%s>http://en.wikipedia.org/wiki/%s</a></p>" % (content_dictionary['album'], content_dictionary['album'])
+    more_info="<p><a href=http://en.wikipedia.org/wiki/%s>http://en.wikipedia.org/wiki/%s</a></p>" % (content_dictionary['album_id'], content_dictionary['album_id'])
     more_info = indent(more_info,3)
     html_dictionary = {'album': album_string, 'album_img': album_img, 'artist': artist, 'description': description, 'spotify':spotify_string, 'more_info':more_info}
 
@@ -63,7 +63,7 @@ def buildArtistPage(content_dictionary):
         albums_string = albums_string + "<p><a href='index.py?%s'>%s</a></p>" % (urlpath, content_dictionary[x]['album_name'])
         albums_string += '\n'
     albums_string = indent(albums_string, 3)
-    more_info="<p><a href=http://en.wikipedia.org/wiki/%s>http://en.wikipedia.org/wiki/%s</a></p>" % (content_dictionary['artist_id'],content_dictionary['artist_id'])
+    more_info="<p><a href=http://en.wikipedia.org/wiki/%s>http://en.wikipedia.org/wiki/%s</a></p>" % (content_dictionary[0]['artist_id'],content_dictionary[0]['artist_id'])
     more_info = indent(more_info,3)
     html_dictionary['albums'] = albums_string
     html_dictionary['artist'] = artist_string
