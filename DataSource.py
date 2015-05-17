@@ -147,7 +147,7 @@ class DataSource:
 
         return timeline_object
 
-    def getSearchResults(search_string):
+    def getSearchResults(self, search_string):
         album_list = []
         artist_list = []
         if " " not in search_string:
@@ -155,13 +155,13 @@ class DataSource:
             self.cursor.execute("SELECT * FROM albums WHERE name LIKE %s;", (search_parameter,))
             
             for album in self.cursor:
-                album_object = getAlbum(album[0])
-                album_list.append(album_oject)
+                album_object = DataSource.getAlbum(album[0])
+                album_list.append(album_object)
 
             self.cursor.execute("SELECT * FROM artists WHERE name LIKE %s;", (search_parameter,))
 
             for artist in self.cursor:
-                artist_object = getArtist(artist[0])
+                artist_object = DataSource.getArtist(artist[0])
                 artist_list.append(artist_object)
 
         elif " " in search_string:
@@ -171,29 +171,29 @@ class DataSource:
             sql_command = "SELECT * FROM albums WHERE name" 
             for word in list_of_words:
                 word_parameter = "\'%" + list_of_words[x] + "%\'"
-                if x = 0:
+                if x == 0:
                     sql_string = "LIKE %s" % (word_parameter)
-                if x>0:
+                if x > 0:
                     sql_string = "OR name LIKE %s" % (word_parameter)
                 sql_command = sql_command + sql_string
             self.cursor.execute(sql_command)
 
             for album in self.cursor:
-                album_object = getAlbum(album[0])
+                album_object = DataSource.getAlbum(album[0])
                 album_list.append(album_object)
 
             sql_command = "SELECT * FROM artists WHERE name" 
             for word in list_of_words:
                 word_parameter = "\'%" + list_of_words[x] + "%\'"
-                if x = 0:
+                if x == 0:
                     sql_string = "LIKE %s" % (word_parameter)
-                if x>0:
+                if x > 0:
                     sql_string = "OR name LIKE %s" % (word_parameter)
                 sql_command = sql_command + sql_string
             self.cursor.execute(sql_command)
 
             for artist in self.cursor:
-                album_object = getAlbum(artist[0])
+                album_object = DataSource.getAlbum(artist[0])
                 album_list.append(album_object)
 
         results = [album_list, artist_list]
