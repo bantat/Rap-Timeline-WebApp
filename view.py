@@ -27,7 +27,9 @@ def buildAlbumPage(content_dictionary):
     artist = "<h2><a href='index.py?%s'>%s</a></h2>" % (urlpath, content_dictionary['artist_name'])
     artist = indent(artist, 3)
 
-    html_dictionary = {'album': album_string, 'album_img': album_img, 'artist': artist, 'description': description, 'spotify':spotify_string}
+    more_info="<p><a href=http://en.wikipedia.org/wiki/%s>http://en.wikipedia.org/wiki/%s</a></p>" % (content_dictionary['album'], content_dictionary['album'])
+    more_info = indent(more_info,3)
+    html_dictionary = {'album': album_string, 'album_img': album_img, 'artist': artist, 'description': description, 'spotify':spotify_string, 'more_info':more_info}
 
     f = open("album.html")
     album_template = f.read()
@@ -45,7 +47,7 @@ def buildArtistPage(content_dictionary):
     f.close()
     #The first item in content dictionary is the information for the artist
     #sets the dictionary values for the template artists.html
-    html_dictionary = {'artist': '', 'image': '', 'description': '', 'albums': ''}
+    html_dictionary = {'artist': '', 'image': '', 'description': '', 'albums': '','more_info':''}
     artist_string = "<h2> %s </h2>" % (content_dictionary[0]['artist_name'])
     artist_string = indent(artist_string, 3)
     image_path = "<img src= %s align='middle'>" % (content_dictionary[0]['image'])
@@ -61,10 +63,13 @@ def buildArtistPage(content_dictionary):
         albums_string = albums_string + "<p><a href='index.py?%s'>%s</a></p>" % (urlpath, content_dictionary[x]['album_name'])
         albums_string += '\n'
     albums_string = indent(albums_string, 3)
+    more_info="<p><a href=http://en.wikipedia.org/wiki/%s>http://en.wikipedia.org/wiki/%s</a></p>" % (content_dictionary['artist_id'],content_dictionary['artist_id'])
+    more_info = indent(more_info,3)
     html_dictionary['albums'] = albums_string
     html_dictionary['artist'] = artist_string
     html_dictionary['description'] = description
     html_dictionary['image'] = image_path
+    html_dictionary['more_info']=more_info
 
     output = artist_template.format(**html_dictionary)
     return output
