@@ -47,7 +47,5 @@ table{
 	margin-left: 200px;
 }
 #search{
-	text-align: center;
-	margin-right:20px;
-	margin-left:700px;
+	float:right;
 }
