@@ -52,3 +52,7 @@ table{
 #search{
 	float:right;
 }
+#no_results{
+	margin-right: 200px;
+	margin-left:200px;
+}
