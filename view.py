@@ -174,6 +174,18 @@ def buildYearPage(content_dictionary):
     return output
 
 
+def buildSearchResultsPage(results_list):
+
+    album_results = results_list[0]
+    artist_results = results_list[1]
+
+    results_string = ""
+
+    # Implement me here
+
+    return results_string
+
+
 def indent(s, k):
     """Indents string argument k number of tab characters (four spaces) for the purposes of HTML page formatting."""
 

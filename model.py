@@ -31,6 +31,11 @@ def buildPageBasedOnParameters(parameters):
         page_content += view.buildHeaderPage()
         page_content += view.buildAlbumPage(getAlbumContent(album))
         page_content += view.buildFooterPage()
+    elif parameters['search'] != '':
+        search_string = parameters['search']
+        page_content += view.buildHeaderPage()
+        page_content += view.buildSearchResultsPage(getSearchResults(search_string))
+        page_content += view.buildFooterPage()
     else:
         page_content += view.buildHeaderPage()
         page_content += view.buildYearsMenu(data_source.getYearsOnTimeline())
@@ -115,6 +120,19 @@ def getYearContent(year):
         content_list.append(content_dictionary)
 
     return content_list
+
+def getSearchResults(search_string):
+
+    album_results = []
+    artist_results = []
+
+    # Implement me here
+
+    total_results = []
+    total_results.append(album_results)
+    total_results.append(artist_results)
+
+    return total_results
 
 def cleanDescription(description):
     description_edit = description
