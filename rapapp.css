@@ -56,3 +56,10 @@ table{
 	margin-right: 200px;
 	margin-left:200px;
 }
+#artist_timeline{
+	margin-bottom: 15px;
+}
+#year{
+	text-decoration: underline;
+	font-size: 24px
+}

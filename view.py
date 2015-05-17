@@ -146,7 +146,7 @@ def buildYearPage(content_dictionary):
     for the year page component of the web application. The method returns a string of HTML text for a year on the
     timeline."""
     year = content_dictionary[0]['year']
-    year_string = "<h1> %s </h1>" % (year)
+    year_string = "<h1 id='year'> %s </h1>" % (year)
     year_string = indent(year_string, 1)
     html_dictionary = {'year': year_string, 'albums': ''}
     
@@ -162,7 +162,7 @@ def buildYearPage(content_dictionary):
         album_path = {'album':content_dictionary[x]['album_id']} 
         urlpath_album = urllib.urlencode(album_path)
         image_src = "<img src=%s width='60' height = '60'>" % content_dictionary[x]['album_img']
-        album_string = "<li><a class='btn' href='index.py?%s'>%s</li><li>%s</li></a><li><a href='index.py?%s'>%s</a></li>"
+        album_string = "<li><a class='btn' href='index.py?%s'>%s</li><li>%s</li></a><li id='artist_timeline'><a href='index.py?%s'>%s</a></li>"
         album_string = album_string % (urlpath_album, image_src, album_name, urlpath_artist, artist_name)
         album_string = indent(album_string, 1)
         if x != (len(content_dictionary) - 1):
