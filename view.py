@@ -211,6 +211,7 @@ def buildSearchResultsPage(results_list, search_string):
     f= open("search.html")
     search_template = f.read()
     f.close()
+    search_string += "..."
 
     html_dictionary = {'search_string':search_string,'results':results_string}
     output= search_template.format(**html_dictionary)
