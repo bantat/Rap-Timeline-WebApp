@@ -18,7 +18,7 @@ def buildPageBasedOnParameters(parameters):
     if parameters['year'] != '':
         year = parameters['year']
 
-        if year in data_source.getYearsOnTimeline():
+        if int(year) in data_source.getYearsOnTimeline():
             page_content += view.buildHeaderPage()
             page_content += view.buildYearsMenu(data_source.getYearsOnTimeline())
             page_content += view.buildYearPage(getYearContent(year))
