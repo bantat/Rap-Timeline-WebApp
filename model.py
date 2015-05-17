@@ -15,22 +15,58 @@ def buildPageBasedOnParameters(parameters):
 
     page_content = ""
 
+    years_on_timeline = data_source.getYearsOnTimeline()
+
     if parameters['year'] != '':
         year = parameters['year']
-        page_content += view.buildHeaderPage()
-        page_content += view.buildYearsMenu(data_source.getYearsOnTimeline())
-        page_content += view.buildYearPage(getYearContent(year))
-        page_content += view.buildFooterPage()
+
+        if year in years_on_timeline:
+            page_content += view.buildHeaderPage()
+            page_content += view.buildYearsMenu(years_on_timeline)
+            page_content += view.buildYearPage(getYearContent(year))
+            page_content += view.buildFooterPage()
+        else:
+            error_description = "Invalid year, %s not on timeline." % (str(year))
+            page_content += view.buildHeaderPage()
+            page_content += view.buildErrorPage(error_description)
+            page_content += view.buildYearsMenu(years_on_timeline)
+            page_content += view.buildTimelinePage(years_on_timeline)
+            page_content += view.buildFooterPage()
     elif parameters['artist'] != '':
         artist = parameters['artist']
-        page_content += view.buildHeaderPage()
-        page_content += view.buildArtistPage(getArtistContent(artist))
-        page_content += view.buildFooterPage()
+        artist_objects = data_source.getAllArtistsFromDatabase()
+        artist_names = []
+        for artist_object in artist_objects:
+            artist_names.append(artist_object.getArtistName)
+
+        if artist in artist_names:
+            page_content += view.buildHeaderPage()
+            page_content += view.buildArtistPage(getArtistContent(artist))
+            page_content += view.buildFooterPage()
+        else:
+            error_description = "Invalid artist, %s not in database." % (artist)
+            page_content += view.buildHeaderPage()
+            page_content += view.buildErrorPage(error_description)
+            page_content += view.buildYearsMenu(years_on_timeline)
+            page_content += view.buildTimelinePage(years_on_timeline)
+            page_content += view.buildFooterPage()
     elif parameters['album'] != '':
         album = parameters['album']
-        page_content += view.buildHeaderPage()
-        page_content += view.buildAlbumPage(getAlbumContent(album))
-        page_content += view.buildFooterPage()
+        album_objects = data_source.getAllAlbumsFromDatabase()
+        album_names = []
+        for album_object in album_objects:
+            album_names.append(album_object.getAlbumName)
+        if album in album_names:
+            page_content += view.buildHeaderPage()
+            page_content += view.buildAlbumPage(getAlbumContent(album))
+            page_content += view.buildFooterPage()
+        else:
+            error_description = "Invalid album, %s not in database." % (album)
+            page_content += view.buildHeaderPage()
+            page_content += view.buildErrorPage(error_description)
+            page_content += view.buildYearsMenu(years_on_timeline)
+            page_content += view.buildTimelinePage(years_on_timeline)
+            page_content += view.buildFooterPage()
     elif parameters['search'] != '':
         search_string = parameters['search']
         page_content += view.buildHeaderPage()
@@ -38,8 +74,8 @@ def buildPageBasedOnParameters(parameters):
         page_content += view.buildFooterPage()
     else:
         page_content += view.buildHeaderPage()
-        page_content += view.buildYearsMenu(data_source.getYearsOnTimeline())
-        page_content += view.buildTimelinePage(data_source.getYearsOnTimeline())
+        page_content += view.buildYearsMenu(years_on_timeline)
+        page_content += view.buildTimelinePage(years_on_timeline)
         page_content += view.buildFooterPage()
 
     return page_content
@@ -57,7 +93,7 @@ def getAlbumContent(album_name):
     content_dictionary['summary'] = cleanDescription(album_object.getAlbumDescription())
     content_dictionary['image'] = album_object.getAlbumImage()
     content_dictionary['year'] = album_object.getAlbumYear()
-    content_dictionary['spotify'] = album_object.getAlbumSpoify()
+    content_dictionary['spotify'] = album_object.getAlbumSpotify()
     artist_name = album_object.getAlbumArtist()
     artist_object = data.getArtist(artist_name)
     content_dictionary['artist_id'] = artist_object.getArtistName()

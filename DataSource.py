@@ -239,7 +239,7 @@ class Album:
     def getAlbumArtist(self):
         return self.album_artist
 
-    def getAlbumSpoify(self):
+    def getAlbumSpotify(self):
         return self.album_spotify
 
 

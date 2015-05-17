@@ -21,8 +21,9 @@ def buildAlbumPage(content_dictionary):
     spotify_id = content_dictionary['spotify']
     spotify_string= ""
     if spotify_id != "NONE":
-        spotify_string = "<iframe src='https://embed.spotify.com/?uri=%s' frameborder = '0' width = '300' height= '380' allowtransparency = 'true'></iframe> " % (spotify_id)
-        spotify_string = indent(spotify_string,3)
+        spotify_string = "<iframe src='https://embed.spotify.com/?uri=%s' frameborder = '0' width = '300'" \
+                         " height= '380' allowtransparency = 'true'></iframe> " % (spotify_id)
+        spotify_string = indent(spotify_string, 3)
     artist = "<h2><a href='index.py?%s'>%s</a></h2>" % (urlpath, content_dictionary['artist_name'])
     artist = indent(artist, 3)
 
@@ -86,6 +87,13 @@ def buildFooterPage():
     footer_string = f.read()
     f.close()
     return footer_string
+
+
+def buildErrorPage(error_description):
+    error_string = ""
+    # Implement me here
+
+    return error_string
 
 
 def buildYearsMenu(years_on_timeline):
