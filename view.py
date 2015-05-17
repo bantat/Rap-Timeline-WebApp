@@ -183,7 +183,7 @@ def buildYearPage(content_dictionary):
     return output
 
 
-def buildSearchResultsPage(results_list):
+def buildSearchResultsPage(results_list, search_string):
 
     album_results = results_list[0]
     artist_results = results_list[1]
@@ -208,8 +208,14 @@ def buildSearchResultsPage(results_list):
             artist_link = "<h2><a href='index.py?artist=%s'>%s</a></h2>" % (artist_name,artist_string)
             results_string +=artist_link
     
+    f= open("search.html")
+    search_template = f.read()
+    f.close()
 
-    return results_string
+    html_dictionary = {'search_string':search_string,'results':results_string}
+    output= search_template.format(**html_dictionary)
+
+    return output
 
 
 def indent(s, k):
