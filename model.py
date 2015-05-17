@@ -160,8 +160,38 @@ def getYearContent(year):
 def getSearchResults(search_string):
 
     data_source = DataSource.DataSource()
-    total_results = data_source.getSearchResults(search_string)
+    album_objects= data_source.getAllAlbumsFromDatabase()
+    artist_objects=data_source.getAllArtistsFromDatabase()
+    album_names = []
+    artist_names = []
+    for album in album_objects:
+        album_names.append(album.getAlbumString())
+    for artist in artist_objects:
+        artist_names.append(artist.getArtistString())
 
+    artist_results=[]
+    album_results=[]
+    if " " not in search_string:
+        for x in len(album_names):
+            if search_string in album_names[x]:
+                album_results.append(album_objects[x])
+        for x in len(artist_names):
+            if search_string in artist_names[x]:
+                artist_results.append(artist_objects[x])
+
+    if " " in search_string:
+        word_list = search_string.split(" ")
+        for word in word_list:
+            for x in len(album_names):
+                if word in album_names[x]:
+                    album_results.append(album_objects[x])
+            for x in len(artist_names):
+                if word in artist_names[x]:
+                    artist_results.append(artist_objects[x])
+    artist_results = list(set(artist_results))
+    album_results = list(set(album_results))
+    
+    total_results= [artist_results,album_results]
     return total_results
 
 def cleanDescription(description):
