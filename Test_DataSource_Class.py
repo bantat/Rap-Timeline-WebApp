@@ -3,11 +3,11 @@
 modified to include a hardcoded PASSWORD variable in the constructor.
 """
 
+__author__ = 'Tore Banta, Charlie Sarano'
+
 import unittest
 from unittest import TestCase
 import DataSource
-
-__author__ = 'Tore Banta & Charlie Sarano'
 
 
 class TestDataSource(TestCase):
