@@ -7,7 +7,6 @@ Ready to Die;1994;The Notorious B.I.G.
 Life After Death;1997;The Notorious B.I.G.
 Reasonable Doubt (album);1996;Jay Z
 The Blueprint;2001;Jay Z
-The Blueprint 2: The Gift & The Curse;2002;Jay Z
 The Blueprint 3;2009;Jay Z
 American Gangster (album);2007;Jay Z
 The Black Album (Jay-Z album);2003;Jay Z
@@ -18,7 +17,6 @@ The Marshall Mathers LP 2;2013;Eminem
 The Chronic;1992;Dr. Dre
 2001 (Dr. Dre album);1999;Dr. Dre
 Doggystyle;1994;Snoop Dogg
-R&G (Rhythm & Gangsta): The Masterpiece;2004;Snoop Dogg
 Bush (album);2015;Snoop Dogg
 Section.80;2011;Kendrick Lamar
 Good Kid, M.A.A.D City;2012;Kendrick Lamar
@@ -39,7 +37,6 @@ Only Built 4 Cuban Linx...;1995;Raekwon
 Only Built 4 Cuban Linx... Pt. II;2009;Raekwon
 Teflon Don (album);2010;Rick Ross
 Mastermind (Rick Ross album);2014;Rick Ross
-Fear of God II: Let Us Pray;2011;Pusha T
 My Name Is My Name;2013;Pusha T
 Hell Hath No Fury (Clipse album);2006;Clipse
 Lord Willin';2002;Clipse
@@ -73,7 +70,6 @@ People's Instinctive Travels and the Paths of Rhythm;1990;A Tribe Called Quest
 Midnight Marauders;1993;A Tribe Called Quest
 The Low End Theory;1991;A Tribe Called Quest
 King (T.I. album);2006;T.I.
-Trouble Man: Heavy Is the Head;2012;T.I.
 Paperwork (T.I. album);2014;T.I.
 Old (Danny Brown album);2013;Danny Brown (rapper)
 XXX (Danny Brown album);2011;Danny Brown (rapper)
@@ -112,16 +108,10 @@ Trap Lord;2013;ASAP Ferg
 Camp (album);2011;Childish Gambino
 Because the Internet;2013;Childish Gambino
 My Ghetto Report Card;2006;E-40
-Revenue Retrievin': Day Shift;2010;E-40
-Revenue Retrievin': Night Shift;2010;E-40
-Revenue Retrievin': Overtime Shift;2011;E-40
-Revenue Retrievin': Graveyard Shift;2011;E-40
 Rolling Papers (mixtape);2010;Domo Genesis
 Hustle Till I Die;2009;Juicy J
 Stay Trippy;2013;Juicy J
 Most Known Unknown;2005;Three 6 Mafia
-Man on the Moon: The End of Day;2009;Kid Cudi
-Man on the Moon II: The Legend of Mr. Rager;2010;Kid Cudi
 Indicud;2013;Kid Cudi
 The Odd Future Tape;2008;Odd Future
 The OF Tape Vol. 2;2012;Odd Future
