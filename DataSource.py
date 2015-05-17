@@ -21,6 +21,7 @@ class DataSource:
 
     def __init__(self):
         """Constructor takes no arguments, and stores a database connection cursor object as an instance variable."""
+
         USERNAME = 'bantat'
         DB_NAME = 'bantat'
         PASSWORD = 'mike494java'
@@ -165,6 +166,7 @@ class Album:
     def __init__(self, album_name, album_description, album_image, album_year, album_artist, album_spotify):
         """Constructor takes arguments for the album name (Wiki article title), description, image link, release year,
          artist, and Spotify URL."""
+
         self.album_name = album_name
         self.album_description = album_description
         self.album_year = album_year
@@ -174,11 +176,13 @@ class Album:
 
     def getAlbumName(self):
         """Returns the album name string, which is stored as the Wikipedia article title."""
+
         return self.album_name
 
     def getAlbumString(self):
         """Returns the album name (Wikipedia article title) stripped of additional identifying information, so that it
          is a human readable string. EX: 2001 (Dr. Dre album) is returned as 2001."""
+
         album_string = self.album_name
 
         for i in range(len(self.album_name)):
@@ -189,22 +193,27 @@ class Album:
 
     def getAlbumDescription(self):
         """Returns the album description."""
+
         return self.album_description
 
     def getAlbumYear(self):
         """Returns the album release year."""
+
         return self.album_year
 
     def getAlbumImage(self):
         """Returns the album image link."""
+
         return self.album_image
 
     def getAlbumArtist(self):
         """Returns the album artist's name as a string (Wikipedia article title)."""
+
         return self.album_artist
 
     def getAlbumSpotify(self):
         """Returns the album's Spotify URL."""
+
         return self.album_spotify
 
 
@@ -214,6 +223,7 @@ class Artist:
     def __init__(self, artist_name, artist_description, artist_image, artist_albums):
         """Constructor takes arguments for the artist name (Wiki article title), description, image link, and a list of
         album objects for each album in the database by the artist."""
+
         self.artist_name = artist_name
         self.artist_description = artist_description
         self.artist_image = artist_image
@@ -221,11 +231,13 @@ class Artist:
 
     def getArtistName(self):
         """Returns the artist name string, which is stored as the Wikipedia article title."""
+
         return self.artist_name
 
     def getArtistString(self):
         """Returns the artist name (Wikipedia article title) stripped of additional identifying information, so that it
          is a human readable string. EX: Common (rapper) is returned as Common."""
+
         artist_string = self.artist_name
 
         for i in range(len(self.artist_name)):
@@ -236,14 +248,17 @@ class Artist:
 
     def getArtistDescription(self):
         """Returns the artist description."""
+
         return self.artist_description
 
     def getArtistImage(self):
         """Returns the artist image link."""
+
         return self.artist_image
 
     def getArtistAlbums(self):
         """Returns a list of album objects for each album in the database by the artist."""
+
         return self.artist_albums
 
 
@@ -253,13 +268,16 @@ class Timeline:
     def __init__(self, year, albums):
         """Constructor takes arguments for the integer value of the year, and a list of album objects for albums which
          were released during the year."""
+
         self.year = year
         self.albums = albums
 
     def getYear(self):
         """Returns the integer year value."""
+
         return self.year
 
     def getAlbumsForYear(self):
         """Returns a list of album objects for albums which were released during the year."""
+
         return self.albums
