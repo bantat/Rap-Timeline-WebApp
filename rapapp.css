@@ -60,8 +60,7 @@ table{
 	margin-bottom: 50px;
 }
 #year{
-	border-bottom-style: solid;
-	border-bottom: #FF0000;
+	border-bottom: 5px solid black;
 	border-bottom-width: 200px;
 	font-size: 50px
 }
