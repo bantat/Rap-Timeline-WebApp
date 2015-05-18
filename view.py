@@ -26,7 +26,12 @@ def buildAlbumPage(content_dictionary):
         spotify_string = indent(spotify_string, 3)
     artist = "<h2><a href='index.py?%s'>%s</a></h2>" % (urlpath, content_dictionary['artist_name'])
     artist = indent(artist, 3)
-    album_url = content_dictionary['album_id'].replace(" ","_")
+    album_id = content_dictionary['album_id']
+    album_url = ""
+    try:
+        album_url = urllib.urlencode(album_id)
+    except:
+        album_url = album_id
     more_info="<p><a href=http://en.wikipedia.org/wiki/%s>http://en.wikipedia.org/wiki/%s</a></p>" % (album_url, album_id)
     more_info = indent(more_info,3)
     html_dictionary = {'album': album_string, 'album_img': album_img, 'artist': artist, 'description': description, 'spotify':spotify_string, 'more_info':more_info}
