@@ -24,18 +24,18 @@ class DataSource:
 
         USERNAME = 'bantat'
         DB_NAME = 'bantat'
-        PASSWORD = 'mike494java'
+        PASSWORD = ''
 
         db_connection = None
         self.cursor = None
 
         # Attempts to read the database password from a file stored on the server, and assign to variable PASSWORD
-        # try:
-        #     f = open(os.path.join('/cs257', USERNAME))
-        #     PASSWORD = f.read().strip()
-        #     f.close()
-        # except:
-        #     print "Password failed"
+        try:
+            f = open(os.path.join('/cs257', USERNAME))
+            PASSWORD = f.read().strip()
+            f.close()
+        except:
+            print "Password failed"
 
         # Attempts to establish a database connection using password string variable read from file on the server
         try:
