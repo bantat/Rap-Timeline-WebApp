@@ -63,8 +63,12 @@ def buildArtistPage(content_dictionary):
         albums_string = albums_string + "<p><a href='index.py?%s'>%s</a></p>" % (urlpath, content_dictionary[x]['album_name'])
         albums_string += '\n'
     albums_string = indent(albums_string, 3)
-    artist_url=urllib.urlencode(content_dictionary[0]['artist_id'])
-    more_info="<p><a href=http://en.wikipedia.org/wiki/%s>http://en.wikipedia.org/wiki/%s</a></p>" % (artist_url,artist_url)
+    artist_url = ""
+    try:
+        artist_url = urllib.urlencode(content_dictionary[0]['artist_id'])
+    except:
+        artist_url = artist_id.replace(" ","_")
+    more_info="<p><a href=http://en.wikipedia.org/wiki/%s>Wikipedia: %s</a></p>" % (artist_url,artist_url)
     more_info = indent(more_info,3)
     html_dictionary['albums'] = albums_string
     html_dictionary['artist'] = artist_string
