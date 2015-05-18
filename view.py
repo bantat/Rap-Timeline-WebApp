@@ -31,8 +31,8 @@ def buildAlbumPage(content_dictionary):
     try:
         album_url = urllib.urlencode(album_id)
     except:
-        album_url = album_id
-    more_info="<p><a href=http://en.wikipedia.org/wiki/%s>http://en.wikipedia.org/wiki/%s</a></p>" % (album_url, album_id)
+        album_url = album_id.replace(' ','_')
+    more_info="<p><a href=http://en.wikipedia.org/wiki/%s>Wikipedia: %s</a></p>" % (album_url, album_id)
     more_info = indent(more_info,3)
     html_dictionary = {'album': album_string, 'album_img': album_img, 'artist': artist, 'description': description, 'spotify':spotify_string, 'more_info':more_info}
 
@@ -73,7 +73,7 @@ def buildArtistPage(content_dictionary):
     try:
         artist_url = urllib.urlencode(artist_id)
     except:
-        artist_url = artist_id
+        artist_url = artist_id.replace(' ','_')
     more_info="<p><a href=http://en.wikipedia.org/wiki/%s>Wikipedia: %s</a></p>" % (artist_url,artist_id)
     more_info = indent(more_info,3)
     html_dictionary['albums'] = albums_string
