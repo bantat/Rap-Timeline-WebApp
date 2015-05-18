@@ -109,7 +109,7 @@ def getAlbumContent(album_name):
     be used in creating the album page."""
 
     data = DataSource.DataSource()
-
+    #uses album object to return all the album info to place in the content dictionary
     album_object = data.getAlbum(album_name)
     content_dictionary = {'album_id':'','album_name':'','summary':'','image':'','year':'','artist_id':'',
                           'artist_name':'','spotify':''}
@@ -120,6 +120,7 @@ def getAlbumContent(album_name):
     content_dictionary['year'] = album_object.getAlbumYear()
     content_dictionary['spotify'] = album_object.getAlbumSpotify()
     artist_name = album_object.getAlbumArtist()
+    #uses artist name to make artist object
     artist_object = data.getArtist(artist_name)
     content_dictionary['artist_id'] = artist_object.getArtistName()
     content_dictionary['artist_name'] = artist_object.getArtistString()
@@ -135,6 +136,7 @@ def getArtistContent(artist_name):
 
     content_list = []
 
+    #builds artist dictionary to be the first item in content list passed out
     artist_object = data.getArtist(artist_name)
     artist_dictionary = {'artist_name':'','artist_id':'','summary':'','image':''}
     artist_dictionary['artist_name'] = artist_object.getArtistString()
@@ -145,6 +147,7 @@ def getArtistContent(artist_name):
 
     albums = artist_object.getArtistAlbums()
     for album in albums:
+        #each item in content list after artist dictionary is an album dictionary with album id, name and year of release
         content_dictionary = {'album_id':'','year':'','album_name':''}
         content_dictionary['album_id'] = album.getAlbumName()
         content_dictionary['year'] = album.getAlbumYear()
