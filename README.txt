@@ -18,3 +18,5 @@ Features:
 
 Version 1: http://thacker.mathcs.carleton.edu/cs257/bantat/WebAppV1/index.py
 Final Version: http://thacker.mathcs.carleton.edu/cs257/bantat/WebAppFinal/index.py
+
+Note: These addresses can only be accessed through the Carleton College network
